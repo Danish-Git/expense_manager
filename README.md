@@ -1,16 +1,44 @@
-# expense_manager
+# Expense Manager
 
-Expense Manager App
+Is an application to keep track of your daily expenses. It also have multiple languages support to  make it more user friendly
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is based on Flutter framework.
 
-A few resources to get you started if this is your first Flutter project:
+For help getting started with Flutter setup, view the [online documentation](https://docs.flutter.dev/get-started/install), which offers tutorials, guidance on mobile development.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This project is based latest configuration (for now) of flutter framework. Please refer to the attached flutter doctor summery
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+    apple@ expense_manager % flutter doctor  
+    Doctor summary (to see all details, run flutter doctor -v):  
+    [✓] Flutter (Channel stable, 3.22.2, on macOS 14.4.1)  
+    [✓] Android toolchain - develop for Android devices (Android SDK version 34.0.0)  
+    [✓] Xcode - develop for iOS and macOS (Xcode 15.4)  
+    [✓] Chrome - develop for the web  
+    [✓] Android Studio (version 2024.1,1)  
+    [✓] VS Code (version 1.90.2)  
+    [✓] Network resources  
+      
+    • No issues found!
+
+You may proceed with cloning the project and making project up and running you may follow the following steps
+
+-   **Navigate to the Project Directory:**
+    -   Once the cloning process is complete, navigate into the project directory: `cd <project_directory>`
+    -   Replace `<project_directory>` with the name of the directory created during cloning.
+-   **Check Flutter Dependencies:**
+    -   Ensure that the Flutter dependencies are up to date. Run: `flutter pub get`
+
+-   **Open in IDE:**
+    -   Open the project in your preferred IDE or code editor (e.g., VS Code, Android Studio).
+
+-   **Run the Project:**
+    -   Connect an emulator/device or use an existing one that is running.
+    -   Run the Flutter project using:  `flutter run`
+    -   This command builds and deploys the Flutter project on your connected device or emulator.
+
+-   **Verify Setup:**
+    -   Once the project builds successfully, you should see the app running on your emulator/device.
+

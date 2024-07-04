@@ -10,7 +10,7 @@ import 'utils/constants/app_config.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Always initialize Awesome Notifications
+  ///   Initialisation of push notification
   await NotificationProvider().initNotification();
 
   runApp(const ExpenseManager());

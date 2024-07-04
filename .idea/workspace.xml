@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="916a7f6c-4f7f-4fda-8d85-3ad0e9497d7a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/en_US/screens/add_expense_form.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/en_US/screens/dashboard.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/en_US/screens/history.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/en_US/screens/settings.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/en_US/screens/splash.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/ur_PK/helpers/form_validator.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/ur_PK/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/ur_PK/screens/add_expense_form.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/ur_PK/screens/dashboard.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/ur_PK/screens/history.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/ur_PK/screens/settings.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/translations/ur_PK/screens/splash.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/common/models/data_models/category.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/common/models/data_models/history.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/helpers/form_validator_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/helpers/helper_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/screens/dashboard/dashboard_controller_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/screens/forms/add_expense_controller_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/screens/history/history_controller_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/screens/settings/settings_controller_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/9b44b7a8a43d68cb22b678c9c2139da6.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/9b44b7a8a43d68cb22b678c9c2139da6.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/assets/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/libs.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/libs.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/0Aa17i0Zm4fDnJiPt7JumB3cfV4=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/0Aa17i0Zm4fDnJiPt7JumB3cfV4=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/26wx5pl6zAf+AkM5+JPNS0boDS8=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/26wx5pl6zAf+AkM5+JPNS0boDS8=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/33XmV1qChT2jKnRR0QOwtOVRtVo=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/33XmV1qChT2jKnRR0QOwtOVRtVo=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/55enEnIGQFQYeDV3beOB9Ib3ZEs=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/55enEnIGQFQYeDV3beOB9Ib3ZEs=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/ALuTXo9ltk2EN3O5MN_jyd2glQQ=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/BVBl8KA8BbQAS95da3grGUNL4Nk=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/BVBl8KA8BbQAS95da3grGUNL4Nk=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/IfE7o3iR8coCqVjKSJ1tTk8h1hc=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/IfE7o3iR8coCqVjKSJ1tTk8h1hc=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/J0A9kKjlBhDmHkb5Ta6r5LGVA_s=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/J0A9kKjlBhDmHkb5Ta6r5LGVA_s=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/LWq_D_9l9UkQhU_KgFQBu6GpvVo=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/LWq_D_9l9UkQhU_KgFQBu6GpvVo=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/QxXDf+xrHGeOmTQf9WuvirlO3W4=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/QxXDf+xrHGeOmTQf9WuvirlO3W4=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/UaWvcwhtduetnz_F+YkTSY5EVGc=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/UaWvcwhtduetnz_F+YkTSY5EVGc=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/WnnEtVHb8Kto_Q3qiaz7zNYKEJs=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/WnnEtVHb8Kto_Q3qiaz7zNYKEJs=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/XhIocTiJKN_xMRi2Vqcj4988Ml8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/XrzBPcDKJs1eQb5hp70r0nTbVH0=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/XrzBPcDKJs1eQb5hp70r0nTbVH0=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/ZaBxSCdXjvC4ee+kTcemLflOu2U=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/ZaBxSCdXjvC4ee+kTcemLflOu2U=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/bmXYRtug9rJ53122Jc4jqbQAafQ=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/bmXYRtug9rJ53122Jc4jqbQAafQ=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/cim8tsf5FSUzU9ctW5PU8LXVulQ=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/cim8tsf5FSUzU9ctW5PU8LXVulQ=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/cnr4eBneqfPM3bB+jmW1kGZ6ueg=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/cnr4eBneqfPM3bB+jmW1kGZ6ueg=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/eNjTbaSEnPfyopwxSCnY2JpH8UI=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/eNjTbaSEnPfyopwxSCnY2JpH8UI=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/p4RiPEX80LGCWtmWxrjLo+nT_wU=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/p4RiPEX80LGCWtmWxrjLo+nT_wU=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/tQguSITAELqUEUhKAV43V6bONEs=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/tQguSITAELqUEUhKAV43V6bONEs=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/uqqi5uffJd41s0lTICf7GtbossM=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/uqqi5uffJd41s0lTICf7GtbossM=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/zgFCCMBSJHE1tQapIXCo4H79ujE=" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/zgFCCMBSJHE1tQapIXCo4H79ujE=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/debug/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/debug/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_java_res/debug/base.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_java_res/debug/base.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/source_set_path_map/debug/file-map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/source_set_path_map/debug/file-map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/kotlin/compileDebugKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/kotlin/compileDebugKotlin/local-state/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/FontManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NOTICES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/images/avocado.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/images/habanero.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/images/mushroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/images/plum.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/images/potato.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/images/strawberry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/shaders/ink_sparkle.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/path_provider_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/path_provider_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/shared_preferences_android/.transforms/202d0205ed7995ffaf82b704ad14b417/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/shared_preferences_android/.transforms/202d0205ed7995ffaf82b704ad14b417/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/shared_preferences_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/shared_preferences_android/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/sqflite/.transforms/11179e978983202558e3a7693f8ef6ca/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/sqflite/.transforms/11179e978983202558e3a7693f8ef6ca/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/sqflite/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/sqflite/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/sqflite/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/sqflite/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/models/data_models/history.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/models/data_models/history.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/models/ui_models/app_translations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/models/ui_models/app_translations.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/models/ui_models/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/models/ui_models/theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/forms/add_expense/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/forms/add_expense/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/forms/add_expense/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/forms/add_expense/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/history/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/history/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/history/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/history/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/overview/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/overview/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/settings/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/settings/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/splash/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/splash/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/constants/app_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/constants/app_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/helpers/form_ui_helper.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/helpers/localizations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/helpers/localizations.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/helpers/sql_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/helpers/sql_helper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/themes/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/themes/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/translations/en_US/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/translations/en_US/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/button/inidex.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/widgets/button/inidex.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/translations/en_US/helpers/form_validator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2ieaxZI2pFGX486HOBFJDjyHDAm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "PROJECT_TRUSTED_KEY": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/lib/utils/translations/ur_PK",
+    "show.migrate.to.gradle.popup": "false"
+  },
+  "keyToStringList": {
+    "com.android.tools.idea.sqlite.queryhistory": [
+      "SELECT * FROM expenses ORDER BY transaction_date DESC,  id DESC",
+      "SELECT * FROM expenses ORDER BY transaction_date DESC,  id ASC",
+      "SELECT * FROM expenses ORDER BY  id DESC, transaction_date DESC ",
+      "SELECT * FROM expenses ORDER BY  id ASC, transaction_date DESC ",
+      "SELECT * FROM expenses ORDER BY  transaction_date  DESC"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/utils/translations/ur_PK" />
+      <recent name="$PROJECT_DIR$/lib/screens/history" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/utils/translations/en_US" />
+      <recent name="$PROJECT_DIR$/lib/common" />
+      <recent name="$PROJECT_DIR$/lib/utils/widgets/responsive_scaffold" />
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flutter Test.tests in add_expense_controller_test.dart">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Calculates isEditingAllowed correctly" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Calculates isEditingAllowed correctly" />
+      <option name="testFile" value="$PROJECT_DIR$/test/screens/forms/add_expense_controller_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Sets selectedDate correctly" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Sets selectedDate correctly" />
+      <option name="testFile" value="$PROJECT_DIR$/test/screens/forms/add_expense_controller_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="setEditFormData Method Tests" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="setEditFormData Method Tests" />
+      <option name="testFile" value="$PROJECT_DIR$/test/screens/forms/add_expense_controller_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in add_expense_controller_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/test/screens/forms/add_expense_controller_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in helper_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/test/helpers/helper_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter Test.tests in add_expense_controller_test.dart" />
+        <item itemvalue="Flutter Test.Calculates isEditingAllowed correctly" />
+        <item itemvalue="Flutter Test.setEditFormData Method Tests" />
+        <item itemvalue="Flutter Test.Sets selectedDate correctly" />
+        <item itemvalue="Flutter Test.tests in helper_test.dart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="916a7f6c-4f7f-4fda-8d85-3ad0e9497d7a" name="Changes" comment="" />
+      <created>1719853748108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719853748108</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/screens/forms/add_expense/controller.dart</url>
+          <line>78</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="CidrExceptionBreakpoint" />
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -3,14 +3,14 @@ import 'package:sqflite/sqflite.dart';
 import '../../common/providers/db_provider.dart';
 
 class SqlHelper {
-  ///   Getting status if table exists in local db
+  /// [checkTableExists] is used to check if a given table exists in local db
   Future<bool> checkTableExists({Database? dbClient, required String table}) async {
     final newDbClient = dbClient ?? await DBProvider().db;
     List<Map<String, dynamic>>? resources = (await newDbClient!.rawQuery("SELECT name FROM sqlite_master WHERE type = 'table' AND name = '$table'")).toList();
     return resources.isNotEmpty;
   }
 
-  ///   Getting one record from local db
+  /// [getLastAddedId] is used to get last added record of given table from local db
   Future<int?> getLastAddedId({Database? dbClient, required String table}) async {
     final newDbClient = dbClient ?? await DBProvider().db;
     List<Map<String, dynamic>>? resources = (await newDbClient!.rawQuery("SELECT COUNT(*) AS count FROM $table")).toList();
@@ -21,7 +21,7 @@ class SqlHelper {
     }
   }
 
-  ///   Getting status if data exists in table
+  /// [checkRecordExists] is used to check if some data exists in a given table
   Future<bool> checkRecordExists({Database? dbClient, required String table}) async {
     bool tableExists = await checkTableExists(table: table, dbClient: dbClient);
 

@@ -1,0 +1,1 @@
+ /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/.dart_tool/flutter_build/3599f786fdcf9675d7b2f7b747bbf9c5/native_assets.yaml: 

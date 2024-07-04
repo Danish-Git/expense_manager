@@ -7,7 +7,6 @@ import 'package:expense_manager/utils/widgets/text/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:get/get.dart';
-import 'package:jiffy/jiffy.dart';
 
 import 'controller.dart';
 import 'widget/list_item_tile.dart';
@@ -31,7 +30,7 @@ class HistoryView extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: EMAppTheme.themeColors.lightGray,
             title: TextWidget(
-              text: "History",
+              text: "history".tr,
               color: EMAppTheme.themeColors.text,
               fontWeight: EMFontWeight.bold,
             ),
@@ -85,41 +84,4 @@ class HistoryView extends StatelessWidget {
       )
     );
   }
-
-  Widget getSeparator(HistoryController controller, int index) {
-    if(index == 0) {
-      controller.tempDate = DateTime.parse(controller.expenses![index].transactionDate!);
-      return Padding(
-        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextWidget(
-              text: Jiffy.parseFromDateTime(controller.tempDate).fromNow(),
-              fontSize: EMFontSize.title,
-              fontWeight: EMFontWeight.bold,
-            ),
-            TextWidget(
-              text: controller.totalAmount.toString(),
-              color: EMAppTheme.themeColors.primary,
-              fontSize: EMFontSize.title,
-              fontWeight: EMFontWeight.medium,
-            ),
-          ],
-        ),
-      );
-    } else {
-      if(controller.tempDate != DateTime.parse(controller.expenses![index].transactionDate!) && index > 0){
-        controller.tempDate = DateTime.parse(controller.expenses![index].transactionDate!);
-        return TextWidget(
-          text: Jiffy.parseFromDateTime(controller.tempDate).fromNow(),
-          fontSize: EMFontSize.title,
-          fontWeight: EMFontWeight.bold,
-        );
-      } else {
-        return const SizedBox(height: 5);
-      }
-    }
-  }
-
 }

@@ -13,54 +13,35 @@ class DashboardController extends GetxController {
 
   ExpenseModel? expense;
 
-  List<NavigationRailDestination> get mainDrawerItems => const <NavigationRailDestination>[
+  List<NavigationRailDestination> get mainDrawerItems => <NavigationRailDestination>[
     NavigationRailDestination(
-      icon: Icon(Icons.account_balance_wallet_rounded),
-      label: TextWidget(text: "Overview"),
+      icon: const Icon(Icons.account_balance_wallet_rounded),
+      label: TextWidget(text: "overview".tr),
     ),
     NavigationRailDestination(
-      icon: Icon(Icons.history),
-      label: TextWidget(text: "History"),
+      icon: const Icon(Icons.history),
+      label: TextWidget(text: "history".tr),
     ),
     NavigationRailDestination(
-      icon: Icon(Icons.settings),
-      label: TextWidget(text: "Settings"),
+      icon: const Icon(Icons.settings),
+      label: TextWidget(text: "settings".tr),
     )
   ];
 
-  List<NavigationDestination> get bottomNavigationItems => const <NavigationDestination>[
+  List<NavigationDestination> get bottomNavigationItems => <NavigationDestination>[
     NavigationDestination(
-      label: 'Overview',
-      icon: Icon(Icons.account_balance_wallet_rounded),
+      label: 'overview'.tr,
+      icon: const Icon(Icons.account_balance_wallet_rounded),
     ),
     NavigationDestination(
-      label: 'History',
-      icon: Icon(Icons.history),
+      label: 'history'.tr,
+      icon: const Icon(Icons.history),
     ),
     NavigationDestination(
-      label: 'Settings',
-      icon: Icon(Icons.settings),
+      label: 'settings'.tr,
+      icon: const Icon(Icons.settings),
     )
   ];
-
-  Widget pages (index) {
-    switch(index) {
-      case 0:
-        return const OverviewView();
-      case 1:
-        return HistoryView(expense: expense);
-      case 2:
-        return const SettingView();
-      default:
-        return Container();
-    }
-  }
-
-
-  void onItemSelection(int? index) {
-    selectedIndex = index ?? 0;
-    update();
-  }
 
   @override
   void onInit() {
@@ -78,6 +59,24 @@ class DashboardController extends GetxController {
     } catch (e) {
       rethrow;
     }
+  }
+
+  Widget pages (index) {
+    switch(index) {
+      case 0:
+        return const OverviewView();
+      case 1:
+        return HistoryView(expense: expense);
+      case 2:
+        return const SettingView();
+      default:
+        return Container();
+    }
+  }
+
+  void onItemSelection(int? index) {
+    selectedIndex = index ?? 0;
+    update();
   }
 
   void onAddExpense(ExpenseModel? expense) {

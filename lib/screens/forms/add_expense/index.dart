@@ -45,12 +45,12 @@ class ExpenseFormView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-
+                  ///   Header
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const TextWidget(
-                        text: "Record Expense",
+                      TextWidget(
+                        text: "record_expense".tr,
                         fontSize: EMFontSize.title,
                         fontWeight: EMFontWeight.bold,
                       ),
@@ -59,7 +59,7 @@ class ExpenseFormView extends StatelessWidget {
                         icon: Icon(Icons.close, color: EMAppTheme.themeColors.text, size: 18))
                     ],
                   ),
-
+                  ///   Body
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
@@ -68,42 +68,46 @@ class ExpenseFormView extends StatelessWidget {
                               key: controller.formKey,
                               child: Column(
                                 children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Flexible(
-                                        flex: 1,
-                                        child: CustomTextFormField(
-                                          textController: controller.amountInput,
-                                          labelText: 'Amount',
-                                          hintText: "Amount",
-                                          prefixIcon: Icon(
-                                            Icons.account_balance_wallet,
-                                            color: EMAppTheme.themeColors.text,
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 5),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Flexible(
+                                          flex: 1,
+                                          child: CustomTextFormField(
+                                            textController: controller.amountInput,
+                                            labelText: 'amount'.tr,
+                                            hintText: "amount".tr,
+                                            readOnly: controller.isEditingAllowed,
+                                            prefixIcon: Icon(
+                                              Icons.account_balance_wallet,
+                                              color: EMAppTheme.themeColors.text,
+                                            ),
+                                            keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
+                                            inputFormatters: [FilteringTextInputFormatter.allow(RegExp(AppConfig.amountReg))],
+                                            validator:(val) => FormValidator.validateAmount(val, isNumberRequired: true),
                                           ),
-                                          keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
-                                          inputFormatters: [FilteringTextInputFormatter.allow(RegExp(AppConfig.amountReg))],
-                                          validator:(val) => FormValidator.validateAmount(val, isNumberRequired: true),
                                         ),
-                                      ),
-                                      const SizedBox(width: 10),
-                                      Flexible(
-                                        flex: 1,
-                                        child: CustomTextFormField(
-                                          textController: controller.dateInput,
-                                          onTap: () => controller.selectDate(context),
-                                          readOnly: true,
-                                          labelText: 'Date',
-                                          prefixIcon: Icon(
-                                            Icons.calendar_month,
-                                            color: EMAppTheme.themeColors.text,
+                                        const SizedBox(width: 10),
+                                        Flexible(
+                                          flex: 1,
+                                          child: CustomTextFormField(
+                                            textController: controller.dateInput,
+                                            onTap: controller.isEditingAllowed ? () => controller.selectDate(context) : null,
+                                            readOnly: true,
+                                            labelText: 'date'.tr,
+                                            prefixIcon: Icon(
+                                              Icons.calendar_month,
+                                              color: EMAppTheme.themeColors.text,
+                                            ),
+                                            keyboardType: TextInputType.datetime,
+                                            validator:(val) => FormValidator.requiredFieldValidator(val, errorMsg: "Please Select Date"),
                                           ),
-                                          keyboardType: TextInputType.datetime,
-                                          validator:(val) => FormValidator.requiredFieldValidator(val, errorMsg: "Please Select Date"),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
 
                                   Padding(
@@ -113,7 +117,8 @@ class ExpenseFormView extends StatelessWidget {
                                       minLines: 1,
                                       maxLines: 3,
                                       maxLength: 200,
-                                      labelText: 'Description',
+                                      labelText: 'description'.tr,
+                                      readOnly: controller.isEditingAllowed,
                                     ),
                                   ),
                                 ],
@@ -124,7 +129,7 @@ class ExpenseFormView extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(bottom: 10),
                               child: TextWidget(
-                                text: controller.isCategorySelected ? "Select Expense Category" : "Please Select Expense Category",
+                                text: controller.isCategorySelected ? "select_expense_category".tr : "please_select_expense_category".tr,
                                 color: controller.isCategorySelected ? EMAppTheme.themeColors.text: EMAppTheme.themeColors.red,
                                 fontSize: EMFontSize.text ,
                                 fontWeight: EMFontWeight.bold,
@@ -144,7 +149,7 @@ class ExpenseFormView extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(20),
                                     color: controller.categories![index].isSelected ? EMAppTheme.themeColors.base : EMAppTheme.themeColors.dimGray,
                                     child: InkWell(
-                                      onTap: () => controller.selectCategory(index),
+                                      onTap: controller.isEditingAllowed ? () => controller.selectCategory(index) : null,
                                       borderRadius: BorderRadius.circular(20),
                                       child: Padding(
                                         padding: const EdgeInsets.all(10),
@@ -170,26 +175,29 @@ class ExpenseFormView extends StatelessWidget {
                       ),
                     ),
                   ),
-
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          if(controller.isEditForm)...{
+                  ///   Footer
+                  Visibility(
+                    visible: controller.isEditingAllowed,
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            if(controller.isEditForm)...{
+                              CustomButton(
+                                title: "delete".tr.toUpperCase(),
+                                buttonType: ButtonType.large,
+                                onTap: controller.deleteExpense,
+                              ),
+                              const SizedBox(width: 10),
+                            },
                             CustomButton(
-                              title: "Delete",
                               buttonType: ButtonType.large,
-                              onTap: controller.deleteExpense,
+                              onTap: controller.validateForm,
                             ),
-                            const SizedBox(width: 10),
-                          },
-                          CustomButton(
-                            buttonType: ButtonType.large,
-                            onTap: controller.validateForm,
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   )

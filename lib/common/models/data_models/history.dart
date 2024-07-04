@@ -47,16 +47,26 @@ class HistoryModel {
     num total = 0;
     items = [];
 
+    if(list.isNotEmpty) tempDate = DateTime.parse(list[0].transactionDate!);
+
     for(int index = 0; index < list.length; index ++) {
+      num tempAmount = num.tryParse(list[index].amount ?? "") ?? 0;
+      if(index == (list.length - 1) && (tempDate == DateTime.parse(list[index].transactionDate!))) {
+        total += tempAmount;
+        items?.add(list[index]);
 
-      if(index == 0) {
-        tempDate = DateTime.parse(list[index].transactionDate!);
-      }
+        historyList.add(HistoryModel(
+            date: tempDate.toString(),
+            total: total.toString(),
+            items: items
+        ));
 
-      total += num.parse(list[index].amount ?? "");
-      items?.add(list[index]);
-
-      if (tempDate != DateTime.parse(list[index].transactionDate!) && index > 0) {
+        total = 0;
+        items = [];
+      } else if (tempDate == DateTime.parse(list[index].transactionDate!)) {
+        total += tempAmount;
+        items?.add(list[index]);
+      } else {
 
         historyList.add(HistoryModel(
           date: tempDate.toString(),
@@ -67,8 +77,11 @@ class HistoryModel {
         tempDate = DateTime.parse(list[index].transactionDate!);
         total = 0;
         items = [];
+        total = tempAmount;
+        items?.add(list[index]);
       }
     }
+
     return historyList;
   }
 

@@ -1,3 +1,4 @@
+import 'package:expense_manager/utils/constants/app_config.dart';
 import 'package:expense_manager/utils/helpers/form_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,6 +25,7 @@ class ExpenseFormController extends GetxController {
 
   bool isCategorySelected = true;
   bool isEditForm = false;
+  bool isEditingAllowed = true;
   CategoryModel? selectedCategory;
 
   ExpenseFormController({this.expense});
@@ -52,7 +54,7 @@ class ExpenseFormController extends GetxController {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: selectedDate,
-      firstDate: DateTime.now().subtract(const Duration(days: 7)),
+      firstDate: DateTime.now().subtract(AppConfig.maxExpenseManagementDuration),
       lastDate: DateTime.now(),
     );
 
@@ -70,6 +72,7 @@ class ExpenseFormController extends GetxController {
   void setEditFormData() {
     isEditForm = true;
     selectedDate = DateTime.parse(expense?.transactionDate ?? "");
+    isEditingAllowed = (Helper.calculateDifference(selectedDate)).abs() <= AppConfig.maxExpenseManagementDuration.inDays;
     amountInput.text = expense?.amount ?? "";
     dateInput.text = Helper.formatDate(selectedDate);
     descriptionInput.text = expense?.description ?? "";
@@ -129,8 +132,4 @@ class ExpenseFormController extends GetxController {
     descriptionInput.dispose();
     super.dispose();
   }
-
-
-
-
 }

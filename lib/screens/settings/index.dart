@@ -22,7 +22,7 @@ class SettingView extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: EMAppTheme.themeColors.lightGray,
             title: TextWidget(
-              text: "Settings",
+              text: "settings".tr,
               color: EMAppTheme.themeColors.text,
               fontWeight: EMFontWeight.bold,
             ),
@@ -48,8 +48,8 @@ class SettingView extends StatelessWidget {
                 const Divider(),
                 ListTile(
                   leading: const Icon(Icons.translate_outlined),
-                  title: const TextWidget(
-                    text: "Language",
+                  title: TextWidget(
+                    text: "language".tr,
                   ),
                   trailing: PopupMenuButton<Languages>(
                     onSelected: controller.changeLocale,
@@ -83,8 +83,8 @@ class SettingView extends StatelessWidget {
                 ListTile(
                   onTap: controller.logout,
                   leading: const Icon(Icons.logout_outlined),
-                  title: const TextWidget(
-                    text: "Logout",
+                  title: TextWidget(
+                    text: "logout".tr,
                   ),
                   trailing: const Icon(Icons.navigate_next_outlined),
                 ),

@@ -17,7 +17,7 @@ class OverviewView extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: EMAppTheme.themeColors.lightGray,
-            title: const TextWidget(text: AppConfig.appName),
+            title: TextWidget(text: AppConfig.appName.tr),
             centerTitle: true,
           ),
           body: Container(

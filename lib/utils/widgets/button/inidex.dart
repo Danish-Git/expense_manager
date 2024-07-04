@@ -1,6 +1,7 @@
 import 'package:expense_manager/utils/themes/index.dart';
 import 'package:expense_manager/utils/widgets/text/index.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'constants/button_type.dart';
 
@@ -60,8 +61,8 @@ class CustomButton extends StatelessWidget {
       children: [
         leadingIcon!,
         const SizedBox(width: 20),
-        Center(child: TextWidget(text: title ?? "Record Expense")),
+        Center(child: TextWidget(text: title ?? "record_expense".tr)),
       ],
-    ) : TextWidget(text: title ?? "SAVE"),
+    ) : TextWidget(text: title ?? "save".tr.toUpperCase()),
   );
 }

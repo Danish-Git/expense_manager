@@ -10,5 +10,6 @@ com.expensemanager.com.expense_manager.app-rs-8 /Users/apple/Documents/Office/Fr
 com.expensemanager.com.expense_manager.app-mergeDebugResources-9 /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
 com.expensemanager.com.expense_manager.app-mergeDebugResources-10 /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
 com.expensemanager.com.expense_manager.app-merged_res-11 /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/app/intermediates/merged_res/debug
-com.expensemanager.com.expense_manager.app-packaged_res-12 /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/shared_preferences_android/intermediates/packaged_res/debug
-com.expensemanager.com.expense_manager.app-packaged_res-13 /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/sqflite/intermediates/packaged_res/debug
+com.expensemanager.com.expense_manager.app-packaged_res-12 /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/path_provider_android/intermediates/packaged_res/debug
+com.expensemanager.com.expense_manager.app-packaged_res-13 /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/shared_preferences_android/intermediates/packaged_res/debug
+com.expensemanager.com.expense_manager.app-packaged_res-14 /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/sqflite/intermediates/packaged_res/debug

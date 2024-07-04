@@ -72,9 +72,9 @@ class HistoryController extends GetxController {
     int difference = Helper.calculateDifference(DateTime.parse(date));
     switch(difference) {
       case 0:
-        return "Today";
+        return "today".tr;
       case -1:
-        return "Yesterday";
+        return "yesterday".tr;
       default:
         return Helper.formatDate(DateTime.parse(date));
     }

@@ -9,11 +9,11 @@ class LocalizationsHelper {
   static String getSelectedLocaleName(Languages? language) {
     switch(language) {
       case Languages.english:
-        return "English";
+        return "english".tr;
       case Languages.urdu:
-        return "Urdu";
+        return "urdu".tr;
       default:
-        return "English";
+        return "english".tr;
     }
   }
 

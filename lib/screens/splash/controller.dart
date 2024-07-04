@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../common/providers/notification/controller.dart';
 import '../../routes/routes.dart';
 import '../../utils/constants/shared_preferences.dart';
 import '../../utils/enums/localizations.dart';
@@ -12,6 +13,7 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    NotificationController.startListeningNotificationEvents();
     loadData();
   }
 

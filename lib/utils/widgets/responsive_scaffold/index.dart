@@ -2,8 +2,6 @@ import 'package:expense_manager/utils/themes/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:get/get.dart';
-
-import '../../../common/models/data_models/expense.dart';
 import '../button/constants/button_type.dart';
 import '../button/inidex.dart';
 import 'controller.dart';
@@ -17,7 +15,6 @@ class ResponsiveScaffold extends StatelessWidget {
     this.body,
     this.secondaryBody,
     this.onItemSelection,
-    this.onAddExpense,
     this.backgroundColor,
   });
 
@@ -27,14 +24,13 @@ class ResponsiveScaffold extends StatelessWidget {
   final SlotLayout? body;
   final SlotLayout? secondaryBody;
   final Function(int? index)? onItemSelection;
-  final Function(ExpenseModel? expense)? onAddExpense;
   final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ResponsiveScaffoldController>(
       global: false,
-      init: ResponsiveScaffoldController(onAddExpense: onAddExpense),
+      init: ResponsiveScaffoldController(),
       builder: (controller) => Scaffold(
         backgroundColor: backgroundColor ?? EMAppTheme.themeColors.lightGray,
         body: AdaptiveLayout(
@@ -120,17 +116,6 @@ class ResponsiveScaffold extends StatelessWidget {
             },
           ),
         ),
-        floatingActionButton: Visibility(
-            visible: !Breakpoints.mediumAndUp.isActive(context),
-            child: Container(
-              margin: const EdgeInsets.only(bottom: kBottomNavigationBarHeight + 20),
-              child: CustomButton(
-                buttonType: ButtonType.small,
-                leadingIcon: const Icon(Icons.add),
-                onTap: () => controller.addExpense(!Breakpoints.mediumAndUp.isActive(context)),
-              ),
-            ),
-          )
       )
     );
   }

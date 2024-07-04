@@ -1,3 +1,4 @@
+import 'package:expense_manager/common/providers/notification/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,7 +7,12 @@ import 'routes/index.dart';
 import 'routes/routes.dart';
 import 'utils/constants/app_config.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Always initialize Awesome Notifications
+  await NotificationProvider().initNotification();
+
   runApp(const ExpenseManager());
 }
 

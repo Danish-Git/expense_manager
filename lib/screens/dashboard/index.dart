@@ -19,8 +19,6 @@ class DashboardView extends StatelessWidget {
         mainDrawerItems: controller.mainDrawerItems,
         bottomNavigationItems: controller.bottomNavigationItems,
         body: body(controller),
-        secondaryBody: secondaryBody(controller),
-        onAddExpense: controller.onAddExpense,
       )
     );
   }
@@ -32,15 +30,5 @@ class DashboardView extends StatelessWidget {
         builder: (_) => controller.pages(controller.selectedIndex)
       )
     }
-  );
-
-  SlotLayout secondaryBody (DashboardController controller) => SlotLayout(
-      config: <Breakpoint, SlotLayoutConfig?>{
-        Breakpoints.mediumAndUp: SlotLayout.from(
-          outAnimation: AdaptiveScaffold.stayOnScreen,
-          key: const Key('Secondary Body'),
-          builder: (_) => controller.pages(controller.selectedIndex)
-        )
-      }
   );
 }

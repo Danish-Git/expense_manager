@@ -1,6 +1,5 @@
 import 'package:expense_manager/screens/dashboard/controller.dart';
 import 'package:expense_manager/screens/history/index.dart';
-import 'package:expense_manager/screens/overview/index.dart';
 import 'package:expense_manager/screens/settings/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -9,22 +8,12 @@ void main() {
   DashboardController controller = DashboardController();
 
   group("DashboardController@pages, Should load correct page", () {
-    testWidgets('Should load OverviewView when index is 0', (WidgetTester tester) async {
-      Widget widget = controller.pages(0);
-
-      await tester.pumpWidget(MaterialApp(home: Scaffold(body: widget)));
-
-      expect(find.byType(OverviewView), findsOneWidget);
-      expect(find.byType(HistoryView), findsNothing);
-      expect(find.byType(SettingView), findsNothing);
-    });
 
     testWidgets('Should load HistoryView when index is 1', (WidgetTester tester) async {
       Widget widget = controller.pages(1);
 
       await tester.pumpWidget(MaterialApp(home: Scaffold(body: widget)));
 
-      expect(find.byType(OverviewView), findsNothing);
       expect(find.byType(HistoryView), findsOneWidget);
       expect(find.byType(SettingView), findsNothing);
     });
@@ -34,7 +23,6 @@ void main() {
 
       await tester.pumpWidget(MaterialApp(home: Scaffold(body: widget)));
 
-      expect(find.byType(OverviewView), findsNothing);
       expect(find.byType(HistoryView), findsNothing);
       expect(find.byType(SettingView), findsOneWidget);
     });
@@ -45,7 +33,6 @@ void main() {
       await tester.pumpWidget(MaterialApp(home: Scaffold(body: widget)));
 
       expect(find.byType(Container), findsOneWidget);
-      expect(find.byType(OverviewView), findsNothing);
       expect(find.byType(HistoryView), findsNothing);
       expect(find.byType(SettingView), findsNothing);
     });

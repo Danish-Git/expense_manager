@@ -11,8 +11,6 @@ import '../forms/add_expense/index.dart';
 
 class HistoryController extends GetxController {
 
-  final ExpenseModel? expense;
-
   List<ExpenseModel>? expenses;
   List<CategoryModel>? categories;
   List<HistoryModel>? historyList;
@@ -20,12 +18,6 @@ class HistoryController extends GetxController {
   DateTime tempDate = DateTime.now();
 
   num totalAmount = 0;
-
-  HistoryController({this.expense}) {
-    if(expense != null) {
-      onInit.call();
-    }
-  }
 
   @override
   Future<void> onInit() async {
@@ -35,8 +27,6 @@ class HistoryController extends GetxController {
 
   Future<void> loadData() async {
     try {
-
-      if(expense != null) await Future.delayed(const Duration(seconds: 1));
 
       expenses = [];
       categories = [];
@@ -55,6 +45,18 @@ class HistoryController extends GetxController {
       rethrow;
     }
   }
+
+  Future<void> addExpense(bool isMobile) async {
+    ExpenseModel? expense = await getBottomSheet(
+      isMobile: isMobile,
+      child: const ExpenseFormView(),
+    );
+
+    if(expense != null) {
+      await loadData();
+    }
+  }
+
 
   Future<void> editExpense(bool isMobile, ExpenseModel expenseModel) async {
     ExpenseModel? expense = await getBottomSheet(

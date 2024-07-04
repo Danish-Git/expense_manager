@@ -4,6 +4,8 @@ class UrPkSettingsTranslations {
     "urdu": "Urdu",
     "settings": "Settings",
     "language": "Language",
+    "select_time": "Select time",
+    "reminder": "Reminder",
     "logout": "Logout",
   };
 }

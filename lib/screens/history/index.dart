@@ -1,4 +1,3 @@
-import 'package:expense_manager/common/models/data_models/expense.dart';
 import 'package:expense_manager/utils/constants/app_config.dart';
 import 'package:expense_manager/utils/themes/index.dart';
 import 'package:expense_manager/utils/widgets/text/constants/font_size.dart';
@@ -8,22 +7,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:get/get.dart';
 
+import '../../utils/widgets/button/constants/button_type.dart';
+import '../../utils/widgets/button/inidex.dart';
 import 'controller.dart';
 import 'widget/list_item_tile.dart';
 
 class HistoryView extends StatelessWidget {
-  const HistoryView({
-    super.key,
-    this.expense,
-  });
+  const HistoryView({super.key,});
 
-  final ExpenseModel? expense;
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HistoryController>(
       global: false,
-      init: HistoryController(expense: expense),
+      init: HistoryController(),
       builder: (controller) => SafeArea(
         child: Scaffold(
           backgroundColor: EMAppTheme.themeColors.base,
@@ -80,6 +77,17 @@ class HistoryView extends StatelessWidget {
               );
             }
           ),
+            floatingActionButton: Visibility(
+              visible: !Breakpoints.mediumAndUp.isActive(context),
+              child: Container(
+                margin: const EdgeInsets.only(bottom: kBottomNavigationBarHeight + 20),
+                child: CustomButton(
+                  buttonType: ButtonType.small,
+                  leadingIcon: const Icon(Icons.add),
+                  onTap: () => controller.addExpense(!Breakpoints.mediumAndUp.isActive(context)),
+                ),
+              ),
+            )
         ),
       )
     );

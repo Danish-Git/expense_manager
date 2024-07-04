@@ -29,8 +29,8 @@ class SplashView extends StatelessWidget {
                   color: EMAppTheme.themeColors.primary,
                   size: 100),
 
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10),
                   child: TextWidget(
                     text: AppConfig.appName,
                     fontSize: EMFontSize.title,

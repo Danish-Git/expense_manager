@@ -12,10 +12,6 @@ class ResponsiveScaffoldController extends GetxController with GetSingleTickerPr
 
   ValueNotifier<bool?> showGridView = ValueNotifier<bool?>(false);
 
-  final Function(ExpenseModel? expense)? onAddExpense;
-
-  ResponsiveScaffoldController({this.onAddExpense});
-
   @override
   void onInit() {
     super.onInit();
@@ -34,7 +30,9 @@ class ResponsiveScaffoldController extends GetxController with GetSingleTickerPr
       child: const ExpenseFormView(),
     );
 
-    onAddExpense?.call(expense);
+    if(expense != null) {
+      refresh();
+    }
   }
 
 }

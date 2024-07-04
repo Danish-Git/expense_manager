@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../history/index.dart';
-import '../overview/index.dart';
 import '../settings/index.dart';
 
 class DashboardController extends GetxController {
@@ -14,10 +13,6 @@ class DashboardController extends GetxController {
   ExpenseModel? expense;
 
   List<NavigationRailDestination> get mainDrawerItems => <NavigationRailDestination>[
-    NavigationRailDestination(
-      icon: const Icon(Icons.account_balance_wallet_rounded),
-      label: TextWidget(text: "overview".tr),
-    ),
     NavigationRailDestination(
       icon: const Icon(Icons.history),
       label: TextWidget(text: "history".tr),
@@ -29,10 +24,6 @@ class DashboardController extends GetxController {
   ];
 
   List<NavigationDestination> get bottomNavigationItems => <NavigationDestination>[
-    NavigationDestination(
-      label: 'overview'.tr,
-      icon: const Icon(Icons.account_balance_wallet_rounded),
-    ),
     NavigationDestination(
       label: 'history'.tr,
       icon: const Icon(Icons.history),
@@ -64,10 +55,8 @@ class DashboardController extends GetxController {
   Widget pages (index) {
     switch(index) {
       case 0:
-        return const OverviewView();
+        return const HistoryView();
       case 1:
-        return HistoryView(expense: expense);
-      case 2:
         return const SettingView();
       default:
         return Container();
@@ -77,10 +66,5 @@ class DashboardController extends GetxController {
   void onItemSelection(int? index) {
     selectedIndex = index ?? 0;
     update();
-  }
-
-  void onAddExpense(ExpenseModel? expense) {
-    this.expense = expense;
-    refresh();
   }
 }

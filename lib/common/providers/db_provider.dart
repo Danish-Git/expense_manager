@@ -49,6 +49,7 @@ class DBProvider {
       description TEXT,
       transaction_date TEXT,
       category_id INTEGER,
+      user_id INTEGER,
       created_at TEXT,
       updated_at TEXT
       )''');

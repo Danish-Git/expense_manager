@@ -1,5 +1,5 @@
 class UrPkSplashTranslations {
   static Map<String, String> strings = {
-    "expense_manager": "Expense Manager",
+    "expense_manager": "اخراجات کے منتظم",
   };
 }

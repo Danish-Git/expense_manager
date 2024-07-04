@@ -79,7 +79,8 @@ class ExpenseFormController extends GetxController {
     selectedCategory = categories?.firstWhereOrNull((category) => category.id == int.tryParse(expense?.categoryId ?? ""))?..isSelected = true;
   }
 
-  void selectCategory(int index) {
+  void selectCategory(int index, {bool? isUnitTest}) {
+    if(!(isUnitTest ?? false)) Helper.hideKeyboard;
     selectedCategory = categories![index]..isSelected = true;
     categories = Helper.selectItemFromList(list: categories!.cast<dynamic>(), selectedIndex: index).cast<CategoryModel>();
     isCategorySelected = true;

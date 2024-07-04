@@ -41,49 +41,54 @@ class HistoryModel {
   }
 
   List<HistoryModel> fromExpenseList(List<ExpenseModel> list) {
-
     List<HistoryModel> historyList = [];
-    DateTime? tempDate;
+    if (list.isEmpty) return historyList;
+
+    DateTime? tempDate = DateTime.parse(list[0].transactionDate!);
     num total = 0;
-    items = [];
+    List<ExpenseModel> items = [];
 
-    if(list.isNotEmpty) tempDate = DateTime.parse(list[0].transactionDate!);
+    for (int index = 0; index < list.length; index++) {
+      ExpenseModel expense = list[index];
+      num tempAmount = num.tryParse(expense.amount ?? "") ?? 0;
+      DateTime currentDate = DateTime.parse(expense.transactionDate!);
 
-    for(int index = 0; index < list.length; index ++) {
-      num tempAmount = num.tryParse(list[index].amount ?? "") ?? 0;
-      if(index == (list.length - 1) && (tempDate == DateTime.parse(list[index].transactionDate!))) {
+      if (tempDate == currentDate) {
         total += tempAmount;
-        items?.add(list[index]);
+        items.add(expense);
+      }
 
-        historyList.add(HistoryModel(
+      if (tempDate != currentDate || index == list.length - 1) {
+        if (tempDate != currentDate) {
+          historyList.add(HistoryModel(
             date: tempDate.toString(),
             total: total.toString(),
-            items: items
-        ));
+            items: List.from(items),
+          ));
+          tempDate = currentDate;
+          total = tempAmount;
+          items = [expense];
 
-        total = 0;
-        items = [];
-      } else if (tempDate == DateTime.parse(list[index].transactionDate!)) {
-        total += tempAmount;
-        items?.add(list[index]);
-      } else {
-
-        historyList.add(HistoryModel(
-          date: tempDate.toString(),
-          total: total.toString(),
-          items: items
-        ));
-
-        tempDate = DateTime.parse(list[index].transactionDate!);
-        total = 0;
-        items = [];
-        total = tempAmount;
-        items?.add(list[index]);
+          if(index == list.length - 1){
+            historyList.add(HistoryModel(
+              date: tempDate.toString(),
+              total: total.toString(),
+              items: List.from(items),
+            ));
+          }
+        } else {
+          historyList.add(HistoryModel(
+            date: tempDate.toString(),
+            total: total.toString(),
+            items: List.from(items),
+          ));
+        }
       }
     }
 
     return historyList;
   }
+
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};

@@ -36,7 +36,6 @@ INJECTED from /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/ex
 INJECTED from /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/android/app/src/main/AndroidManifest.xml:1:1-50:12
 MERGED from /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/android/app/src/main/AndroidManifest.xml:1:1-50:12
 MERGED from [:awesome_notifications] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-52:12
-MERGED from [:flutter_timezone] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/flutter_timezone/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:shared_preferences_android] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:sqflite] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/sqflite/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -140,8 +139,6 @@ INJECTED from /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/ex
 INJECTED from /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/android/app/src/main/AndroidManifest.xml
 MERGED from [:awesome_notifications] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:awesome_notifications] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_timezone] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/flutter_timezone/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_timezone] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/flutter_timezone/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:shared_preferences_android] /Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41

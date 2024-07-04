@@ -152,7 +152,7 @@ void main() {
 
     int selectedIndex = 1;
 
-    controller.selectCategory(selectedIndex);
+    controller.selectCategory(selectedIndex, isUnitTest: true);
 
     expect(controller.selectedCategory, equals(categories[selectedIndex]));
     expect(controller.selectedCategory?.isSelected, true);
@@ -162,6 +162,5 @@ void main() {
 
     expect(controller.isCategorySelected, true);
   });
-
 
 }

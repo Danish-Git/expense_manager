@@ -9,8 +9,8 @@ void main() {
 
   group("DashboardController@pages, Should load correct page", () {
 
-    testWidgets('Should load HistoryView when index is 1', (WidgetTester tester) async {
-      Widget widget = controller.pages(1);
+    testWidgets('Should load HistoryView when index is 0', (WidgetTester tester) async {
+      Widget widget = controller.pages(0);
 
       await tester.pumpWidget(MaterialApp(home: Scaffold(body: widget)));
 
@@ -18,8 +18,8 @@ void main() {
       expect(find.byType(SettingView), findsNothing);
     });
 
-    testWidgets('Should load SettingView when index is 2', (WidgetTester tester) async {
-      Widget widget = controller.pages(2);
+    testWidgets('Should load SettingView when index is 1', (WidgetTester tester) async {
+      Widget widget = controller.pages(1);
 
       await tester.pumpWidget(MaterialApp(home: Scaffold(body: widget)));
 
@@ -27,8 +27,8 @@ void main() {
       expect(find.byType(SettingView), findsOneWidget);
     });
 
-    testWidgets('Should load Container when index is other than 0, 1, or 2', (WidgetTester tester) async {
-      Widget widget = controller.pages(3); // or any other index that is not 0, 1, or 2
+    testWidgets('Should load Container when index is other than 0 or 1', (WidgetTester tester) async {
+      Widget widget = controller.pages(2);
 
       await tester.pumpWidget(MaterialApp(home: Scaffold(body: widget)));
 

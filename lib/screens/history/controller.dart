@@ -19,6 +19,8 @@ class HistoryController extends GetxController {
 
   num totalAmount = 0;
 
+  bool isLoading = false;
+
   @override
   Future<void> onInit() async {
     super.onInit();
@@ -27,10 +29,9 @@ class HistoryController extends GetxController {
 
   Future<void> loadData() async {
     try {
-
+      toggleIsLoading();
       expenses = [];
       categories = [];
-
       expenses = await ExpenseRepository.getAllExpense();
       categories = await CategoryRepository.getCategories();
 
@@ -43,6 +44,8 @@ class HistoryController extends GetxController {
       update();
     } catch (e) {
       rethrow;
+    } finally {
+      toggleIsLoading();
     }
   }
 
@@ -80,5 +83,10 @@ class HistoryController extends GetxController {
       default:
         return Helper.formatDate(DateTime.parse(date));
     }
+  }
+
+  void toggleIsLoading() {
+    isLoading = !isLoading;
+    update();
   }
 }

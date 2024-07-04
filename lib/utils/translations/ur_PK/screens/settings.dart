@@ -1,11 +1,11 @@
 class UrPkSettingsTranslations {
   static Map<String, String> strings = {
     "english": "English",
-    "urdu": "Urdu",
-    "settings": "Settings",
-    "language": "Language",
-    "select_time": "Select time",
-    "reminder": "Reminder",
-    "logout": "Logout",
+    "urdu": "اردو",
+    "settings": "ترتیبات",
+    "language": "زبان",
+    "select_time": "وقت منتخب کریں",
+    "reminder": "یاد دہانی",
+    "logout": "لاگ آؤٹ",
   };
 }

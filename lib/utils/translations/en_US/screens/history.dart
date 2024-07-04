@@ -3,5 +3,6 @@ class EnUsHistoryTranslations {
     "today": "Today",
     "yesterday": "Yesterday",
     "history": "History",
+    "no_data_found": "No data found",
   };
 }

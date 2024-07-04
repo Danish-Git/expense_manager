@@ -131,7 +131,7 @@
 70-->[androidx.core:core:1.9.0] /Users/apple/.gradle/caches/transforms-3/cd029caa73742c9274e432966ee47c8f/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 71        android:debuggable="true"
 72        android:icon="@mipmap/ic_launcher"
-73        android:label="expense_manager" >
+73        android:label="Expense Manager" >
 74        <activity
 75            android:name="com.expensemanager.com.expense_manager.MainActivity"
 76            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

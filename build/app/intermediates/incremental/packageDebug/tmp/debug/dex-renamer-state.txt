@@ -1,4 +1,4 @@
-#Fri Jul 05 00:56:36 IST 2024
+#Fri Jul 05 02:54:16 IST 2024
 base.0=/Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
 base.2=/Users/apple/Documents/Office/Freelancing/Interview/MsaSoftware/expense_manager/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

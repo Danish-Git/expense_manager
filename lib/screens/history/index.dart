@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:get/get.dart';
 
+import '../../utils/helpers/helper.dart';
 import '../../utils/widgets/button/constants/button_type.dart';
 import '../../utils/widgets/button/inidex.dart';
 import 'controller.dart';
@@ -33,7 +34,11 @@ class HistoryView extends StatelessWidget {
             ),
             centerTitle: true,
           ),
-          body: ListView.builder(
+          body: controller.isLoading
+            ? Center(child: Helper.showLoading())
+            : controller.historyList?.isEmpty ?? true
+              ? Center(child: Helper.showErrorMessage())
+              : ListView.builder(
             itemCount: controller.historyList?.length ?? 0,
             addAutomaticKeepAlives: false,
             itemBuilder: (BuildContext context, int index) {
@@ -79,13 +84,10 @@ class HistoryView extends StatelessWidget {
           ),
             floatingActionButton: Visibility(
               visible: !Breakpoints.mediumAndUp.isActive(context),
-              child: Container(
-                margin: const EdgeInsets.only(bottom: kBottomNavigationBarHeight + 20),
-                child: CustomButton(
-                  buttonType: ButtonType.small,
-                  leadingIcon: const Icon(Icons.add),
-                  onTap: () => controller.addExpense(!Breakpoints.mediumAndUp.isActive(context)),
-                ),
+              child: CustomButton(
+                buttonType: ButtonType.small,
+                leadingIcon: const Icon(Icons.add),
+                onTap: () => controller.addExpense(!Breakpoints.mediumAndUp.isActive(context)),
               ),
             )
         ),

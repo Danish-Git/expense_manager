@@ -80,16 +80,16 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "flutter_spinkit",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/flutter_spinkit-5.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/DevelopmentEnviroments/FlutterEnviroment/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.3"
-    },
-    {
-      "name": "flutter_timezone",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/flutter_timezone-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "flutter_web_plugins",
@@ -126,18 +126,6 @@
       "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/jiffy-6.3.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
-    },
-    {
-      "name": "js",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/js-0.6.7",
-      "packageUri": "lib/",
-      "languageVersion": "2.19"
-    },
-    {
-      "name": "js_interop",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/js_interop-0.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.15"
     },
     {
       "name": "leak_tracker",
@@ -386,7 +374,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-07-04T17:23:34.503636Z",
+  "generated": "2024-07-04T20:06:09.129095Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/DevelopmentEnviroments/FlutterEnviroment/flutter",

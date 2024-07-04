@@ -4,6 +4,7 @@ import 'package:expense_manager/utils/widgets/text/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../common/providers/notification/controller.dart';
 import '../history/index.dart';
 import '../settings/index.dart';
 
@@ -41,6 +42,7 @@ class DashboardController extends GetxController {
   }
 
   Future<void> loadData() async {
+    NotificationController.startListeningNotificationEvents();
     await loadCategories();
   }
 

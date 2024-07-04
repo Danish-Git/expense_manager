@@ -80,7 +80,7 @@ class ExpenseFormView extends StatelessWidget {
                                             textController: controller.amountInput,
                                             labelText: 'amount'.tr,
                                             hintText: "amount".tr,
-                                            readOnly: controller.isEditingAllowed,
+                                            readOnly: !controller.isEditingAllowed,
                                             prefixIcon: Icon(
                                               Icons.account_balance_wallet,
                                               color: EMAppTheme.themeColors.text,
@@ -118,7 +118,7 @@ class ExpenseFormView extends StatelessWidget {
                                       maxLines: 3,
                                       maxLength: 200,
                                       labelText: 'description'.tr,
-                                      readOnly: controller.isEditingAllowed,
+                                      readOnly: !controller.isEditingAllowed,
                                     ),
                                   ),
                                 ],

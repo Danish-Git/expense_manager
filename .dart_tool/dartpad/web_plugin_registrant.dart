@@ -7,14 +7,12 @@
 // ignore_for_file: type=lint
 
 import 'package:awesome_notifications/awesome_notifications_web.dart';
-import 'package:flutter_timezone/flutter_timezone_web.dart';
 import 'package:shared_preferences_web/shared_preferences_web.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void registerPlugins([final Registrar? pluginRegistrar]) {
   final Registrar registrar = pluginRegistrar ?? webPluginRegistrar;
   AwesomeNotificationsWeb.registerWith(registrar);
-  FlutterTimezonePlugin.registerWith(registrar);
   SharedPreferencesPlugin.registerWith(registrar);
   registrar.registerMessageHandler();
 }

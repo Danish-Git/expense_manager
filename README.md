@@ -1,17 +1,20 @@
 # Expense Manager
 
-Is an application to keep track of your daily expenses. It also have multiple languages support to make it more user friendly
 
 
-##
 ## Index of the documentation
 
-1.  [Code Architecture](#code-architecture)
-2.  [Database Structure](#database-structure)
-3.  [App Flow Chart](#app-flow-chart)
-4.  [Installation](#installation)
-5.  [Features](#features-of-the-application)
+1.  [Introduction](#introduction)
+2.  [Code Architecture](#code-architecture)
+3.  [Database Structure](#database-structure)
+4.  [App Flow Chart](#app-flow-chart)
+5.  [Installation](#installation)
+6.  [Features](#features-of-the-application)
 
+##
+## Introduction
+
+Is an application to keep track of your daily expenses. It also have multiple languages support to make it more user friendly
 
 ##
 ## Code Architecture

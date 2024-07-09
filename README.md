@@ -52,18 +52,14 @@ This application has  fully responsive user interface, ensuring a seamless exper
 |--|--|--|
 | ![Screenshot_1720529777](https://github.com/Danish-Git/expense_manager/assets/79436114/6cbf3687-149d-40ac-a9ec-3b1e0145eafa) |  ![Screenshot_1720529762](https://github.com/Danish-Git/expense_manager/assets/79436114/1bfb8ec3-9eb0-4bd2-bcfe-26e95819f264)  |  ![Screenshot_1720529800](https://github.com/Danish-Git/expense_manager/assets/79436114/4e9d118c-fda4-4ec0-bce6-c9dc5e87cb74)  |
 
+- #### Add / Edit Expense Form
+| Large Tablet | Small Tablet | Mobile |
+|--|--|--|
+|  |  |  |
 
-
-
-
-
-
-
-
-
-
-
-
-
+- #### Settings Screen
+| Large Tablet | Small Tablet | Mobile |
+|--|--|--|
+|  |  |  |
 
 

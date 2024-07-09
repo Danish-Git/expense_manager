@@ -149,14 +149,20 @@ Ensuring the reliability and correctness of our application is a top priority. W
 
 Key aspects of our testing strategy include:
 
-**Unit Tests**: Focused on testing individual functions, methods, and classes to ensure they work correctly in isolation. Example:
+### 1. Unit Tests: 
+
+Focused on testing individual functions, methods, and classes to ensure they work correctly in isolation. Example:
 
 <img width="1081" alt="Screenshot 2024-07-10 at 1 17 13 AM" src="https://github.com/Danish-Git/expense_manager/assets/79436114/bc1c0e8e-effa-40a6-9eeb-da2292292928">
 
 
-**Widget Tests**: Focused on testing the UI components and their interactions. These tests ensure that widgets render correctly and respond to user input as expected. Example:
+
+### 2. Widget Tests: 
+
+Focused on testing the UI components and their interactions. These tests ensure that widgets render correctly and respond to user input as expected. Example:
 
 <img width="1081" alt="Screenshot 2024-07-10 at 1 21 21 AM" src="https://github.com/Danish-Git/expense_manager/assets/79436114/7519ceba-92fa-42d1-8d4a-c81b43c46e85">
 
+#
 
 There are a total of 56 test cases, combining both unit and widget tests. To run the tests, use the following command: `flutter test`

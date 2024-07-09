@@ -40,6 +40,7 @@ The application uses SQLite for data storage. Below is the structure of the data
 
 Below is a flow chart illustrating the app's workflow:
 
+![app-flow-chart](https://github.com/Danish-Git/expense_manager/assets/79436114/6c2dcf20-a0a0-4f0c-a156-f5621d2e6ab9)
 
 
 ##

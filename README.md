@@ -83,6 +83,14 @@ This application supports English and Urdu languages. This feature allows users 
 | ![Screenshot_1720533869](https://github.com/Danish-Git/expense_manager/assets/79436114/6e837275-7069-4309-ba16-61eac8450e89) | ![Screenshot_1720526497](https://github.com/Danish-Git/expense_manager/assets/79436114/9ef85c89-2131-495d-aca4-c3769c0d9423) | ![Screenshot_1720526549](https://github.com/Danish-Git/expense_manager/assets/79436114/75205c41-6f60-4325-8703-55ec2e8b8289) |
 
 
+### Reminder to Add Expense
+
+This application includes a feature that allows users to set reminders to add their expenses. This feature ensures that users stay on top of their financial tracking by sending notifications at the scheduled times.
+
+- #### Notification
+| Tablet | Mobile |
+|--|--|
+|  |  |
 
 
 

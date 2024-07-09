@@ -2,14 +2,15 @@
 
 Is an application to keep track of your daily expenses. It also have multiple languages support to make it more user friendly
 
+
 ##
 ## Content structure of the document
 
-1.  Code Architecture
-2.  Database Structure
-3.  App Flow Chart
-4.  Installation
-5.  Features
+1.  [Code Architecture](#code-architecture)
+2.  [Database Structure](#database-structure)
+3.  [App Flow Chart](#app-flow-chart)
+4.  [Installation](#installation)
+5.  [Features](#features-of-the-application)
 
 
 ##
@@ -85,7 +86,7 @@ You may proceed with clonnong the project and making project up and running you 
  
 
 ##
-## Features Available
+## Features of The Application
 
 ### 1. Responsive UI
 

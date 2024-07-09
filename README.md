@@ -2,6 +2,7 @@
 
 Is an application to keep track of your daily expenses. It also have multiple languages support to  make it more user friendly
 
+##
 ## Getting Started
 
 This project is based on Flutter framework.
@@ -40,7 +41,24 @@ You may proceed with clonnong the project and making project up and running you 
 
 -   **Verify Setup:**
     -   Once the project builds successfully, you should see the app running on your emulator/device.
+ 
+##
+## Code Architecture
 
+Clean architecture revolves around separating code into layers, each with a distinct responsibility. The primary layers include:
+
+1.  **Application Layer**: The application layer contains the application's core business logic. It serves as an intermediary between the presentation and domain layers, coordinating data flow and enforcing business rules.
+
+2.  **Data Layer**: This layer manages data storage, retrieval, and interactions with external APIs. It encompasses repositories, data sources, and API clients.
+
+3.  **Domain Layer**: The domain layer defines the fundamental business logic and domain models of the application. It remains independent of specific UI frameworks or databases, ensuring high reusability and testability.
+  
+4.  **Presentation Layer**: This layer concerns itself with the user interface and interactions. It includes global widgets, screens, and controllers responsible for user input and data display.
+
+
+<img width="668" alt="Screenshot 2024-07-09 at 8 34 10 PM" src="https://github.com/Danish-Git/expense_manager/assets/79436114/582df4ac-28a1-41d3-a8f2-b19622f3599d">
+
+##
 ## Features Available
 
 ### 1. Responsive UI
@@ -93,15 +111,4 @@ This application includes a feature that allows users to set reminders to add th
 | ![Screenshot_1720526440](https://github.com/Danish-Git/expense_manager/assets/79436114/fe827874-6086-4399-9895-139a8ab05400) | ![Screenshot_1720526367](https://github.com/Danish-Git/expense_manager/assets/79436114/86a7d8ad-a011-4ec0-99a6-77ad259b4fd0) |
 
 
-## Code Architecture
-
-Clean architecture revolves around separating code into layers, each with a distinct responsibility. The primary layers include:
-
-1.  **Presentation Layer**: This layer concerns itself with the user interface and interactions. It includes global widgets, screens, and controllers responsible for user input and data display.
-
-2.  **Application Layer**: The application layer contains the application's core business logic. It serves as an intermediary between the presentation and domain layers, coordinating data flow and enforcing business rules.
-
-3.  **Domain Layer**: The domain layer defines the fundamental business logic and domain models of the application. It remains independent of specific UI frameworks or databases, ensuring high reusability and testability.
-
-4.  **Data Layer**: This layer manages data storage, retrieval, and interactions with external APIs. It encompasses repositories, data sources, and API clients.
 

@@ -10,6 +10,7 @@
 4.  [App Flow Chart](#app-flow-chart)
 5.  [Installation](#installation)
 6.  [Features](#features-of-the-application)
+7.  [Unit and Widget Test Cases](#unit-and-widget-test-cases)
 
 ##
 ## Introduction
@@ -139,3 +140,23 @@ This application includes a feature that allows users to set reminders to add th
 | Tablet | Mobile |
 |--|--|
 | ![Screenshot_1720526440](https://github.com/Danish-Git/expense_manager/assets/79436114/fe827874-6086-4399-9895-139a8ab05400) | ![Screenshot_1720526367](https://github.com/Danish-Git/expense_manager/assets/79436114/86a7d8ad-a011-4ec0-99a6-77ad259b4fd0) |
+
+
+##
+## Unit and Widget Test Cases
+
+Ensuring the reliability and correctness of our application is a top priority. We have implemented comprehensive unit and widget test cases to verify that our application behaves as expected.
+
+Key aspects of our testing strategy include:
+
+**Unit Tests**: Focused on testing individual functions, methods, and classes to ensure they work correctly in isolation. Example:
+
+<img width="1081" alt="Screenshot 2024-07-10 at 1 17 13 AM" src="https://github.com/Danish-Git/expense_manager/assets/79436114/bc1c0e8e-effa-40a6-9eeb-da2292292928">
+
+
+**Widget Tests**: Focused on testing the UI components and their interactions. These tests ensure that widgets render correctly and respond to user input as expected. Example:
+
+<img width="1081" alt="Screenshot 2024-07-10 at 1 21 21 AM" src="https://github.com/Danish-Git/expense_manager/assets/79436114/7519ceba-92fa-42d1-8d4a-c81b43c46e85">
+
+
+There are a total of 56 test cases, combining both unit and widget tests. To run the tests, use the following command: `flutter test`

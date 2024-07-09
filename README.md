@@ -4,7 +4,7 @@ Is an application to keep track of your daily expenses. It also have multiple la
 
 
 ##
-## Content structure of the document
+## Index of the documentation
 
 1.  [Code Architecture](#code-architecture)
 2.  [Database Structure](#database-structure)

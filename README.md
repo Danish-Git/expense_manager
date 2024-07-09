@@ -50,5 +50,6 @@ This application has  fully responsive user interface, ensuring a seamless exper
 - #### Expense History Screen
 | Large Tablet | Small Tablet | Mobile |
 |--|--|--|
-| <img src='https://imgur.com/YYuW9F8' width=30%> |<img src='https://imgur.com/WRWMnkn' width=30%>  |<img src='https://imgur.com/BpnSSgp' width=30%>  |
+| ![Large Tampetet History Screen](https://drive.google.com/file/d/1sWPoJn0S7_i109AsqJPW-8KTWFqYui5A/view?usp=sharing) | ![Large Tampetet History Screen](https://drive.google.com/file/d/1sWPoJn0S7_i109AsqJPW-8KTWFqYui5A/view?usp=sharing) |![Large Tampetet History Screen](https://drive.google.com/file/d/1sWPoJn0S7_i109AsqJPW-8KTWFqYui5A/view?usp=sharing)  |
 
+![Large Tampetet History Screen](https://drive.google.com/file/d/1sWPoJn0S7_i109AsqJPW-8KTWFqYui5A/view?usp=sharing)

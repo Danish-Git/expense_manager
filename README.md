@@ -43,53 +43,65 @@ You may proceed with clonnong the project and making project up and running you 
 
 ## Features Available
 
-### Responsive UI
+### 1. Responsive UI
 
 This application has fully responsive user interface, ensuring a seamless experience across a wide range of devices, from smartphones and tablets.
 
-- #### Expense History Screen
+- #### *Expense History Screen*
 | Large Tablet | Small Tablet | Mobile |
 |--|--|--|
 | ![Screenshot_1720529777](https://github.com/Danish-Git/expense_manager/assets/79436114/6cbf3687-149d-40ac-a9ec-3b1e0145eafa) |  ![Screenshot_1720529762](https://github.com/Danish-Git/expense_manager/assets/79436114/1bfb8ec3-9eb0-4bd2-bcfe-26e95819f264)  |  ![Screenshot_1720529800](https://github.com/Danish-Git/expense_manager/assets/79436114/4e9d118c-fda4-4ec0-bce6-c9dc5e87cb74)  |
 
-- #### Add / Edit Expense Form
+- #### *Add / Edit Expense Form*
 | Large Tablet | Small Tablet | Mobile |
 |--|--|--|
 | ![Screenshot_1720526239](https://github.com/Danish-Git/expense_manager/assets/79436114/e1076f60-8c16-4fa0-9c1a-a1887c2bfac7) | ![Screenshot_1720526463](https://github.com/Danish-Git/expense_manager/assets/79436114/e290a5fe-d088-466e-9c3e-2c218e84c7de) | ![Screenshot_1720526243](https://github.com/Danish-Git/expense_manager/assets/79436114/899b92f6-95bf-4205-86bf-883385667c63) |
 
-- #### Settings Screen
+- #### *Settings Screen*
 | Large Tablet | Small Tablet | Mobile |
 |--|--|--|
 | ![Screenshot_1720532888](https://github.com/Danish-Git/expense_manager/assets/79436114/d473911a-5bec-47b5-9c7e-a625cbfbde24) | ![Screenshot_1720526490](https://github.com/Danish-Git/expense_manager/assets/79436114/38a5d2c7-18d5-4aa5-b784-80ee9d612463) | ![Screenshot_1720526303](https://github.com/Danish-Git/expense_manager/assets/79436114/5b37467b-bc95-4757-8bd9-438f722dd4e5) |
 
 
-### Multi-language Support
+#### 2. Multi-language Support
 
 This application supports English and Urdu languages. This feature allows users to choose their preferred language, enhancing usability and accessibility.
 
-- #### Expense History Screen (Urdu)
+- #### *Expense History Screen (Urdu)*
 | Large Tablet | Small Tablet | Mobile |
 |--|--|--|
 | ![Screenshot_1720533909](https://github.com/Danish-Git/expense_manager/assets/79436114/42dd60e2-f550-4d97-91da-43205bb25bfe) | ![Screenshot_1720533978](https://github.com/Danish-Git/expense_manager/assets/79436114/1662c169-d627-43b3-82de-a1b86358d465) | ![Screenshot_1720534016](https://github.com/Danish-Git/expense_manager/assets/79436114/0ace565f-a08f-45b6-84ad-a60a9409c1a3) |
 
-- #### Add / Edit Expense Form (Urdu)
+- #### *Add / Edit Expense Form (Urdu)*
 | Large Tablet | Small Tablet | Mobile |
 |--|--|--|
 | ![Screenshot_1720533960](https://github.com/Danish-Git/expense_manager/assets/79436114/9d00cab3-d097-4cce-9c2d-8d8a7952b81f) | ![Screenshot_1720533986](https://github.com/Danish-Git/expense_manager/assets/79436114/df6ec750-c0f1-4432-b570-7ffa480334d0) | ![Screenshot_1720534025](https://github.com/Danish-Git/expense_manager/assets/79436114/74fd2849-760d-4059-9d63-ed4ff25f6cb0) |
 
-- #### Settings Screen (Urdu)
+- #### *Settings Screen (Urdu)*
 | Large Tablet | Small Tablet | Mobile |
 |--|--|--|
 | ![Screenshot_1720533869](https://github.com/Danish-Git/expense_manager/assets/79436114/6e837275-7069-4309-ba16-61eac8450e89) | ![Screenshot_1720526497](https://github.com/Danish-Git/expense_manager/assets/79436114/9ef85c89-2131-495d-aca4-c3769c0d9423) | ![Screenshot_1720526549](https://github.com/Danish-Git/expense_manager/assets/79436114/75205c41-6f60-4325-8703-55ec2e8b8289) |
 
 
-### Reminder to Add Expense
+### 3. Reminder to Add Expense
 
 This application includes a feature that allows users to set reminders to add their expenses. This feature ensures that users stay on top of their financial tracking by sending notifications at the scheduled times.
 
-- #### Notification
+- #### *Notification*
 | Tablet | Mobile |
 |--|--|
 | ![Screenshot_1720526440](https://github.com/Danish-Git/expense_manager/assets/79436114/fe827874-6086-4399-9895-139a8ab05400) | ![Screenshot_1720526367](https://github.com/Danish-Git/expense_manager/assets/79436114/86a7d8ad-a011-4ec0-99a6-77ad259b4fd0) |
 
+
+## Code Architecture
+
+Clean architecture revolves around separating code into layers, each with a distinct responsibility. The primary layers include:
+
+1.  **Presentation Layer**: This layer concerns itself with the user interface and interactions. It includes global widgets, screens, and controllers responsible for user input and data display.
+
+2.  **Application Layer**: The application layer contains the application's core business logic. It serves as an intermediary between the presentation and domain layers, coordinating data flow and enforcing business rules.
+
+3.  **Domain Layer**: The domain layer defines the fundamental business logic and domain models of the application. It remains independent of specific UI frameworks or databases, ensuring high reusability and testability.
+
+4.  **Data Layer**: This layer manages data storage, retrieval, and interactions with external APIs. It encompasses repositories, data sources, and API clients.
 

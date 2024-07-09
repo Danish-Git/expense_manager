@@ -34,6 +34,7 @@ class DBProvider {
       first_name TEXT,
       last_name TEXT,
       email TEXT,
+      password TEXT,
       profile_pic TEXT
       )''');
 

@@ -74,8 +74,7 @@ class NotificationProvider {
         await AwesomeNotifications().requestPermissionToSendNotifications();
   }
 
-
-
+  ///   [createNewNotification] method is use to create a notification for the given time
   static Future<void> createNewNotification(DateTime dateTime) async {
     bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
     if (!isAllowed) isAllowed = await displayNotificationRationale();

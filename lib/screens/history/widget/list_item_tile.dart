@@ -2,10 +2,10 @@ import 'package:expense_manager/common/models/data_models/expense.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/app_config.dart';
+import '../../../utils/global_widgets/text/constants/font_size.dart';
+import '../../../utils/global_widgets/text/constants/font_weight.dart';
+import '../../../utils/global_widgets/text/index.dart';
 import '../../../utils/themes/index.dart';
-import '../../../utils/widgets/text/constants/font_size.dart';
-import '../../../utils/widgets/text/constants/font_weight.dart';
-import '../../../utils/widgets/text/index.dart';
 
 class HistoryListItemTile extends StatelessWidget {
   const HistoryListItemTile({

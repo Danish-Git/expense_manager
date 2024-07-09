@@ -1,11 +1,11 @@
 import 'package:expense_manager/utils/constants/app_config.dart';
 import 'package:expense_manager/utils/themes/index.dart';
-import 'package:expense_manager/utils/widgets/text/constants/font_size.dart';
-import 'package:expense_manager/utils/widgets/text/constants/font_weight.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../utils/widgets/text/index.dart';
+import '../../utils/global_widgets/text/constants/font_size.dart';
+import '../../utils/global_widgets/text/constants/font_weight.dart';
+import '../../utils/global_widgets/text/index.dart';
 import 'controller.dart';
 
 class SplashView extends StatelessWidget {

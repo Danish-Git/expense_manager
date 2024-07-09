@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:get/get.dart';
-
-import '../../utils/widgets/responsive_scaffold/index.dart';
+import '../../utils/global_widgets/responsive_scaffold/index.dart';
 import 'controller.dart';
 
 class DashboardView extends StatelessWidget {

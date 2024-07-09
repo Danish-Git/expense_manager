@@ -5,20 +5,20 @@ import '../../common/models/data_models/category.dart';
 import '../../common/models/data_models/expense.dart';
 import '../../common/models/data_models/history.dart';
 import '../../common/repositories/category.dart';
+import '../../utils/global_widgets/bottom_sheet/index.dart';
 import '../../utils/helpers/helper.dart';
-import '../../utils/widgets/bottom_sheet/index.dart';
 import '../forms/add_expense/index.dart';
 
 class HistoryController extends GetxController {
 
+  /// [expenses],[categories] are the lists to store data which is read for local BD
   List<ExpenseModel>? expenses;
   List<CategoryModel>? categories;
+
+  /// [historyList] is a final list to represent complete history of expenses
   List<HistoryModel>? historyList;
 
-  DateTime tempDate = DateTime.now();
-
-  num totalAmount = 0;
-
+  /// [isLoading] is used to manage loading state while fetching data from local DB
   bool isLoading = false;
 
   @override
@@ -27,6 +27,7 @@ class HistoryController extends GetxController {
     await loadData();
   }
 
+  ///   [loadData] this method is used to load initial data
   Future<void> loadData() async {
     try {
       toggleIsLoading();
@@ -49,19 +50,10 @@ class HistoryController extends GetxController {
     }
   }
 
-  Future<void> addExpense(bool isMobile) async {
-    ExpenseModel? expense = await getBottomSheet(
-      isMobile: isMobile,
-      child: const ExpenseFormView(),
-    );
-
-    if(expense != null) {
-      await loadData();
-    }
-  }
-
-
-  Future<void> editExpense(bool isMobile, ExpenseModel expenseModel) async {
+  ///   [addEditExpense] is a method is used open expense add / edit form
+  ///   in addition it expects for some result from expense form on obtaining
+  ///   result it reloads the screen
+  Future<void> addEditExpense({required bool isMobile, ExpenseModel? expenseModel}) async {
     ExpenseModel? expense = await getBottomSheet(
       isMobile: isMobile,
       child: ExpenseFormView(expense: expenseModel),
@@ -70,9 +62,9 @@ class HistoryController extends GetxController {
     if(expense != null) {
       await loadData();
     }
-
   }
 
+  ///   [getFormattedDate] this method is used to format date for the purpose of displaying
   String getFormattedDate(String date) {
     int difference = Helper.calculateDifference(DateTime.parse(date));
     switch(difference) {
@@ -84,7 +76,7 @@ class HistoryController extends GetxController {
         return Helper.formatDate(DateTime.parse(date));
     }
   }
-
+  ///   [toggleIsLoading] this method is used to alter the state of loading
   void toggleIsLoading() {
     isLoading = !isLoading;
     update();

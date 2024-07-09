@@ -5,8 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="916a7f6c-4f7f-4fda-8d85-3ad0e9497d7a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/providers/notification/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/providers/notification/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/repositories/category.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/repositories/category.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/repositories/expense.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/repositories/expense.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/forms/add_expense/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/forms/add_expense/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/forms/add_expense/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/forms/add_expense/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/history/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/history/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/history/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/history/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/history/widget/list_item_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/history/widget/list_item_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/settings/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/settings/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/settings/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/settings/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/splash/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/splash/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/splash/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/splash/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/bottom_sheet/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/bottom_sheet/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/button/constants/button_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/button/constants/button_type.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/button/inidex.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/button/inidex.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/dialogue/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/dialogue/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/responsive_scaffold/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/responsive_scaffold/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/responsive_scaffold/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/responsive_scaffold/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/text/constants/font_size.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/text/constants/font_size.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/text/constants/font_weight.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/text/constants/font_weight.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/text/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/text/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/text_form_field/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/text_form_field/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,38 +154,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/screens/forms/add_expense/controller.dart</url>
-          <line>78</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/awesome_notifications-0.9.3+1/lib/awesome_notifications.dart</url>
-          <line>143</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/common/models/data_models/history.dart</url>
-          <line>57</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/common/models/data_models/history.dart</url>
-          <line>67</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/common/models/data_models/history.dart</url>
-          <line>79</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/common/models/data_models/history.dart</url>
-          <line>88</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="CidrExceptionBreakpoint" />
       </default-breakpoints>

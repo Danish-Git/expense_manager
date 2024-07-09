@@ -1,15 +1,14 @@
 import 'package:expense_manager/utils/constants/app_config.dart';
 import 'package:expense_manager/utils/themes/index.dart';
-import 'package:expense_manager/utils/widgets/text/constants/font_size.dart';
-import 'package:expense_manager/utils/widgets/text/constants/font_weight.dart';
-import 'package:expense_manager/utils/widgets/text/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:get/get.dart';
-
+import '../../utils/global_widgets/button/constants/button_type.dart';
+import '../../utils/global_widgets/button/inidex.dart';
+import '../../utils/global_widgets/text/constants/font_size.dart';
+import '../../utils/global_widgets/text/constants/font_weight.dart';
+import '../../utils/global_widgets/text/index.dart';
 import '../../utils/helpers/helper.dart';
-import '../../utils/widgets/button/constants/button_type.dart';
-import '../../utils/widgets/button/inidex.dart';
 import 'controller.dart';
 import 'widget/list_item_tile.dart';
 
@@ -69,7 +68,7 @@ class HistoryView extends StatelessWidget {
                     for (var element in controller.historyList![index].items!)...{
                       HistoryListItemTile(
                         expense: element!,
-                        onTap: () => controller.editExpense(!Breakpoints.mediumAndUp.isActive(context), element)
+                        onTap: () => controller.addEditExpense(isMobile:!Breakpoints.mediumAndUp.isActive(context), expenseModel: element)
                       ),
                       const SizedBox(height: 5)
                     },
@@ -87,7 +86,7 @@ class HistoryView extends StatelessWidget {
               child: CustomButton(
                 buttonType: ButtonType.small,
                 leadingIcon: const Icon(Icons.add),
-                onTap: () => controller.addExpense(!Breakpoints.mediumAndUp.isActive(context)),
+                onTap: () => controller.addEditExpense(isMobile: !Breakpoints.mediumAndUp.isActive(context)),
               ),
             )
         ),

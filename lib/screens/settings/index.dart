@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../utils/enums/localizations.dart';
+import '../../utils/global_widgets/text/constants/font_weight.dart';
+import '../../utils/global_widgets/text/index.dart';
 import '../../utils/helpers/localizations.dart';
 import '../../utils/themes/index.dart';
-import '../../utils/widgets/text/constants/font_weight.dart';
-import '../../utils/widgets/text/index.dart';
 import 'controller.dart';
 
 class SettingView extends StatelessWidget {
@@ -48,7 +48,9 @@ class SettingView extends StatelessWidget {
                       ),
                     ),
 
+                    ///   Setting menu items
                     const Divider(),
+                    ///   Language selector
                     ListTile(
                       leading: const Icon(Icons.translate_outlined),
                       title: TextWidget(
@@ -83,6 +85,7 @@ class SettingView extends StatelessWidget {
                       ),
                     ),
                     const Divider(),
+                    ///   Reminder notification
                     ListTile(
                       leading: const Icon(Icons.notifications_active_outlined),
                       title: TextWidget(
@@ -107,6 +110,7 @@ class SettingView extends StatelessWidget {
                       ),
                     ),
                     const Divider(),
+                    ///   logout
                     ListTile(
                       onTap: controller.logout,
                       leading: const Icon(Icons.logout_outlined),

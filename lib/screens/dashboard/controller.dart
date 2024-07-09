@@ -1,18 +1,20 @@
-import 'package:expense_manager/common/models/data_models/expense.dart';
 import 'package:expense_manager/common/repositories/category.dart';
-import 'package:expense_manager/utils/widgets/text/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../common/providers/notification/controller.dart';
+import '../../utils/global_widgets/text/index.dart';
 import '../history/index.dart';
 import '../settings/index.dart';
 
 class DashboardController extends GetxController {
+  ///   [selectedIndex] is used to hold the value of index of selected bottom
+  ///   navigation bar in case of mobile view and index of selected item from
+  ///   menu items in case of tablet view
   int selectedIndex = 0;
 
-  ExpenseModel? expense;
-
+  ///   [mainDrawerItems] is a getter that provide list of menu items used in
+  ///   case of tablet view
   List<NavigationRailDestination> get mainDrawerItems => <NavigationRailDestination>[
     NavigationRailDestination(
       icon: const Icon(Icons.history),
@@ -24,6 +26,8 @@ class DashboardController extends GetxController {
     )
   ];
 
+  ///   [bottomNavigationItems] is a getter that provides list of bottom
+  ///   navigation items used in case of mobile view
   List<NavigationDestination> get bottomNavigationItems => <NavigationDestination>[
     NavigationDestination(
       label: 'history'.tr,
@@ -40,12 +44,15 @@ class DashboardController extends GetxController {
     super.onInit();
     loadData();
   }
-
+  ///   [loadData] method is used to load the data foe initial processing which
+  ///   also include initializations of various necessary services or listeners
+  ///   in over case it is notification listeners
   Future<void> loadData() async {
     NotificationController.startListeningNotificationEvents();
     await loadCategories();
   }
 
+  ///   [loadCategories] method is used to load default categories in local BD
   Future<void> loadCategories() async {
     try {
       await CategoryRepository.loadCategories();
@@ -54,6 +61,7 @@ class DashboardController extends GetxController {
     }
   }
 
+  ///   [pages] is used for navigation purpose based on selected index
   Widget pages (index) {
     switch(index) {
       case 0:
@@ -65,6 +73,9 @@ class DashboardController extends GetxController {
     }
   }
 
+  ///   [onItemSelection] method is used to update the selected index of menu
+  ///   item in case of tab view and index of bottom navigation item in case
+  ///   of mobile view
   void onItemSelection(int? index) {
     selectedIndex = index ?? 0;
     update();

@@ -20,6 +20,8 @@ class CategoryRepository {
     return await batch.commit(continueOnError:true);
   }
 
+  ///   [loadCategories] this method is actually called from other classes to
+  ///   add records of categories for the expense in local DB
   static Future<bool> loadCategories() async {
     List<Map<String, dynamic>>? json = CategoryModel().mockData;
     if(json.isNotEmpty) {
@@ -34,6 +36,7 @@ class CategoryRepository {
     }
   }
 
+  ///   [getCategories] method is used to get all records of categories from local DB
   static Future<List<CategoryModel>> getCategories() async {
     List<CategoryModel> categories = [];
     List<Map<String, dynamic>> list = await SqlHelper().getAllRecords(tableName: SqlConfig.categoryTableName);

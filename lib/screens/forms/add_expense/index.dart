@@ -1,18 +1,18 @@
 import 'package:expense_manager/common/models/data_models/expense.dart';
 import 'package:expense_manager/utils/constants/app_config.dart';
-import 'package:expense_manager/utils/widgets/button/inidex.dart';
-import 'package:expense_manager/utils/widgets/text/constants/font_weight.dart';
-import 'package:expense_manager/utils/widgets/text/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/global_widgets/button/constants/button_type.dart';
+import '../../../utils/global_widgets/button/inidex.dart';
+import '../../../utils/global_widgets/text/constants/font_size.dart';
+import '../../../utils/global_widgets/text/constants/font_weight.dart';
+import '../../../utils/global_widgets/text/index.dart';
+import '../../../utils/global_widgets/text_form_field/index.dart';
 import '../../../utils/helpers/form_validator.dart';
 import '../../../utils/themes/index.dart';
-import '../../../utils/widgets/button/constants/button_type.dart';
-import '../../../utils/widgets/text/constants/font_size.dart';
-import '../../../utils/widgets/text_form_field/index.dart';
 import 'controller.dart';
 
 class ExpenseFormView extends StatelessWidget {

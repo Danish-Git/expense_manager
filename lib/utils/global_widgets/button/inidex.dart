@@ -1,8 +1,8 @@
 import 'package:expense_manager/utils/themes/index.dart';
-import 'package:expense_manager/utils/widgets/text/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../text/index.dart';
 import 'constants/button_type.dart';
 
 class CustomButton extends StatelessWidget {
@@ -38,11 +38,13 @@ class CustomButton extends StatelessWidget {
     );
   }
 
+  ///   [small] method returns UI for small button
   Widget small () => SizedBox(
     width: 50, height: 50,
     child: leadingIcon,
   );
 
+  /// [medium] method returns UI for medium sized button
   Widget medium () => Column(
     children: [
       Container(
@@ -52,6 +54,7 @@ class CustomButton extends StatelessWidget {
       small(),
   ]);
 
+  ///   [large] method returns UI for full large sized button
   Widget large (context) => Container(
     alignment: Alignment.center,
     width: leadingIcon != null ? 200 : 150,

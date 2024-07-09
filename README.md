@@ -22,8 +22,7 @@ This project is based latest configuration (for now) of flutter framework. Pleas
     [✓] Network resources  
       
     • No issues found!
-
-You may proceed with cloning the project and making project up and running you may follow the following steps
+You may proceed with clonnong the project and making project up and running you may follow the following steps
 
 -   **Navigate to the Project Directory:**
     -   Once the cloning process is complete, navigate into the project directory: `cd <project_directory>`
@@ -41,4 +40,15 @@ You may proceed with cloning the project and making project up and running you m
 
 -   **Verify Setup:**
     -   Once the project builds successfully, you should see the app running on your emulator/device.
+
+## Features Available
+
+### Responsive UI
+
+This application has  fully responsive user interface, ensuring a seamless experience across a wide range of devices, from smartphones and tablets.
+
+- #### Expense History Screen
+| Large Tablet | Small Tablet | Mobile |
+|--|--|--|
+| <img src='https://imgur.com/YYuW9F8' width=30%> |<img src='https://imgur.com/WRWMnkn' width=30%>  |<img src='https://imgur.com/BpnSSgp' width=30%>  |
 

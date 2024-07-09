@@ -90,7 +90,6 @@ This application includes a feature that allows users to set reminders to add th
 - #### Notification
 | Tablet | Mobile |
 |--|--|
-|  |  |
-
+| ![Screenshot_1720526440](https://github.com/Danish-Git/expense_manager/assets/79436114/fe827874-6086-4399-9895-139a8ab05400) | ![Screenshot_1720526367](https://github.com/Danish-Git/expense_manager/assets/79436114/86a7d8ad-a011-4ec0-99a6-77ad259b4fd0) |
 
 

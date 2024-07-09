@@ -1,11 +1,11 @@
-import 'package:expense_manager/common/providers/notification/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'common/models/ui_models/app_translations.dart';
-import 'routes/index.dart';
-import 'routes/routes.dart';
-import 'utils/constants/app_config.dart';
+import 'app/constants/app_config.dart';
+import 'app/routes/index.dart';
+import 'app/routes/routes.dart';
+import 'data/models/ui_models/app_translations.dart';
+import 'domain/notification/index.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

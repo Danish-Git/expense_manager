@@ -1,4 +1,4 @@
-import 'package:expense_manager/common/models/data_models/category.dart';
+import 'package:expense_manager/data/models/data_models/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

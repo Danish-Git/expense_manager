@@ -1,5 +1,5 @@
-import 'package:expense_manager/screens/history/controller.dart';
-import 'package:expense_manager/utils/helpers/helper.dart';
+import 'package:expense_manager/app/helpers/helper.dart';
+import 'package:expense_manager/presentation/screens/history/controller.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 

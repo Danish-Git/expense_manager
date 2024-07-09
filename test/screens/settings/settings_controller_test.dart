@@ -1,5 +1,5 @@
-import 'package:expense_manager/screens/settings/controller.dart';
-import 'package:expense_manager/utils/enums/localizations.dart';
+import 'package:expense_manager/app/enums/localizations.dart';
+import 'package:expense_manager/presentation/screens/settings/controller.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 

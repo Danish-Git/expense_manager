@@ -1,6 +1,6 @@
-import 'package:expense_manager/screens/dashboard/controller.dart';
-import 'package:expense_manager/screens/history/index.dart';
-import 'package:expense_manager/screens/settings/index.dart';
+import 'package:expense_manager/presentation/screens/dashboard/controller.dart';
+import 'package:expense_manager/presentation/screens/history/index.dart';
+import 'package:expense_manager/presentation/screens/settings/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

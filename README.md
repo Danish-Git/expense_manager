@@ -45,7 +45,7 @@ You may proceed with clonnong the project and making project up and running you 
 
 ### Responsive UI
 
-This application has  fully responsive user interface, ensuring a seamless experience across a wide range of devices, from smartphones and tablets.
+This application has fully responsive user interface, ensuring a seamless experience across a wide range of devices, from smartphones and tablets.
 
 - #### Expense History Screen
 | Large Tablet | Small Tablet | Mobile |
@@ -55,11 +55,16 @@ This application has  fully responsive user interface, ensuring a seamless exper
 - #### Add / Edit Expense Form
 | Large Tablet | Small Tablet | Mobile |
 |--|--|--|
-|  |  |  |
+| ![Screenshot_1720526239](https://github.com/Danish-Git/expense_manager/assets/79436114/e1076f60-8c16-4fa0-9c1a-a1887c2bfac7) | ![Screenshot_1720526463](https://github.com/Danish-Git/expense_manager/assets/79436114/e290a5fe-d088-466e-9c3e-2c218e84c7de) | ![Screenshot_1720526243](https://github.com/Danish-Git/expense_manager/assets/79436114/899b92f6-95bf-4205-86bf-883385667c63) |
 
 - #### Settings Screen
 | Large Tablet | Small Tablet | Mobile |
 |--|--|--|
-|  |  |  |
+| ![Screenshot_1720532888](https://github.com/Danish-Git/expense_manager/assets/79436114/d473911a-5bec-47b5-9c7e-a625cbfbde24) | 
+![Screenshot_1720526490](https://github.com/Danish-Git/expense_manager/assets/79436114/38a5d2c7-18d5-4aa5-b784-80ee9d612463) | ![Screenshot_1720526303](https://github.com/Danish-Git/expense_manager/assets/79436114/5b37467b-bc95-4757-8bd9-438f722dd4e5) |
+
+
+
+
 
 

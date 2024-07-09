@@ -64,7 +64,24 @@ This application has fully responsive user interface, ensuring a seamless experi
 ![Screenshot_1720526490](https://github.com/Danish-Git/expense_manager/assets/79436114/38a5d2c7-18d5-4aa5-b784-80ee9d612463) | ![Screenshot_1720526303](https://github.com/Danish-Git/expense_manager/assets/79436114/5b37467b-bc95-4757-8bd9-438f722dd4e5) |
 
 
+### Multi-language Support
 
+This application supports English and Urdu languages. This feature allows users to choose their preferred language, enhancing usability and accessibility.
+
+- #### Expense History Screen (Urdu)
+| Large Tablet | Small Tablet | Mobile |
+|--|--|--|
+|  |  |  |
+
+- #### Add / Edit Expense Form (Urdu)
+| Large Tablet | Small Tablet | Mobile |
+|--|--|--|
+|  |  |  |
+
+- #### Settings Screen (Urdu)
+| Large Tablet | Small Tablet | Mobile |
+|--|--|--|
+|  |  |  |
 
 
 

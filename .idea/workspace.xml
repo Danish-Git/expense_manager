@@ -5,33 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="916a7f6c-4f7f-4fda-8d85-3ad0e9497d7a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/providers/notification/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/providers/notification/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/repositories/category.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/repositories/category.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/repositories/expense.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/repositories/expense.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/forms/add_expense/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/forms/add_expense/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/forms/add_expense/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/forms/add_expense/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/history/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/history/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/history/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/history/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/history/widget/list_item_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/history/widget/list_item_tile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/settings/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/settings/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/settings/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/settings/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/splash/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/splash/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/splash/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/splash/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/bottom_sheet/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/bottom_sheet/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/button/constants/button_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/button/constants/button_type.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/button/inidex.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/button/inidex.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/dialogue/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/dialogue/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/responsive_scaffold/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/responsive_scaffold/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/responsive_scaffold/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/responsive_scaffold/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/text/constants/font_size.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/text/constants/font_size.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/text/constants/font_weight.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/text/constants/font_weight.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/text/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/text/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/text_form_field/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/global_widgets/text_form_field/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/common/models/data_models/category.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/models/data_models/category.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/common/models/data_models/history.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/models/data_models/history.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/helpers/form_validator_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/form_validator_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/helpers/helper_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/helper_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/screens/dashboard/dashboard_controller_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/presentation/dashboard/dashboard_controller_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/screens/forms/add_expense_controller_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/presentation/forms/add_expense_controller_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/screens/history/history_controller_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/presentation/history/history_controller_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/screens/settings/settings_controller_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/presentation/settings/settings_controller_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,7 +1,7 @@
-# Personal Financial Intelligence
+# Expense Manager
 
 ## Identity
-Personal Financial Intelligence application.
+Expense Manager application.
 
 ## Technology Stack
 - Backend: Python 3.13, FastAPI, Pydantic, PostgreSQL

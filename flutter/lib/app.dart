@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'core/routes/app_pages.dart';
 import 'core/theme/app_theme.dart';
 
-class IntelligenceApp extends StatelessWidget {
-  const IntelligenceApp({super.key});
+class ExpenseManagerApp extends StatelessWidget {
+  const ExpenseManagerApp({super.key});
 
   @override
   Widget build(BuildContext context) {

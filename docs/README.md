@@ -1,6 +1,6 @@
 # Documentation Index
 
-This directory contains the architecture and development documentation for the Personal Financial Intelligence application.
+This directory contains the architecture and development documentation for the Expense Manager application.
 
 Follow the pattern: INDEX → SMALL DOCUMENT → TASK.
 

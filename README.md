@@ -1,6 +1,6 @@
-# Personal Financial Intelligence
+# Expense Manager
 
-A new Personal Financial Intelligence application.
+A new Expense Manager application.
 
 See `CLAUDE.md` for project identity, core rules, and technology stack.
 See `docs/README.md` for the documentation index.

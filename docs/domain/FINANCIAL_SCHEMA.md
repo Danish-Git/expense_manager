@@ -1,6 +1,6 @@
 # PostgreSQL Financial Schema
 
-This document defines the concrete PostgreSQL database schema for the Personal Financial Intelligence application.
+This document defines the concrete PostgreSQL database schema for the Expense Manager application.
 
 ## Global Design Rules
 - **User Isolation:** All tenant tables include a `user_id` column.

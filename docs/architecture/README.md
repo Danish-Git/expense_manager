@@ -1,6 +1,6 @@
 # Architecture Documentation
 
-This directory contains the architecture specifications for the Personal Financial Intelligence application.
+This directory contains the architecture specifications for the Expense Manager application.
 
 - [Overview](./OVERVIEW.md)
 - [System Boundaries](./SYSTEM.md)

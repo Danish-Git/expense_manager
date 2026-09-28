@@ -1,6 +1,6 @@
 # High Level Architecture Overview
 
-The Personal Financial Intelligence application is a mobile-first platform divided into clear functional boundaries.
+The Expense Manager application is a mobile-first platform divided into clear functional boundaries.
 
 ## Flutter Application
 The mobile frontend provides the user interface and coordinates presentation logic. It does not contain direct database access.

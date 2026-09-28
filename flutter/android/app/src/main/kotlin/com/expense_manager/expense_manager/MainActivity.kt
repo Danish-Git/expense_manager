@@ -1,4 +1,4 @@
-package com.intelligence.expense_manager
+package com.expense_manager.expense_manager
 
 import io.flutter.embedding.android.FlutterActivity
 

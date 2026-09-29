@@ -31,6 +31,14 @@ COMPOSE_FILE = ROOT / "docker-compose.yml"
 # as the platform's own owner-password file (see docs referenced in PLATFORM_REFERENCE.md).
 ENV_MIGRATE = BACKEND / ".env.migrate"
 
+# The shared local platform stack (Postgres + nginx) is owned by the sibling `intelligence`
+# repo, not this one - this script only detects whether it's up and starts it with that repo's
+# own tooling, never duplicating its compose files or touching its secrets.
+PLATFORM_REPO = Path(os.environ.get("EXPENSE_PLATFORM_REPO", ROOT.parent / "intelligence"))
+PLATFORM_NETWORK = "intelligence-local_expenses_internal"
+PLATFORM_EDGE_NETWORK = "intelligence-local_edge"
+PG_BRIDGE_NAME = "pg-bridge"
+
 
 def run(cmd: list, cwd: Path = ROOT, env: dict | None = None) -> subprocess.CompletedProcess:
     printable = " ".join(str(c) for c in cmd)
@@ -61,6 +69,72 @@ def _cache_set(name: str, value: str) -> None:
 # ---- steps ----------------------------------------------------------------------
 
 
+def _network_exists(name: str) -> bool:
+    result = subprocess.run(["docker", "network", "inspect", name], capture_output=True, check=False)
+    return result.returncode == 0
+
+
+def _container_running(name: str) -> bool:
+    result = subprocess.run(
+        ["docker", "inspect", "-f", "{{.State.Running}}", name],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    return result.returncode == 0 and result.stdout.strip() == "true"
+
+
+def ensure_platform_up() -> None:
+    """Bring up the shared local platform stack (Postgres + nginx, owned by the sibling
+    `intelligence` repo) if it's not running, and recreate the throwaway `pg-bridge` loopback so
+    host tools (including this script's own Alembic calls) can reach Postgres on
+    127.0.0.1:15432. Never touches credentials - if Docker was restarted, the platform's own
+    `local-init.sh` re-provisions roles/databases from intelligence/.env.local (a file this
+    script never reads or writes)."""
+    if not _network_exists(PLATFORM_NETWORK):
+        dev_script = PLATFORM_REPO / "scripts" / "dev.py"
+        if not dev_script.exists():
+            sys.exit(
+                f"The shared platform network {PLATFORM_NETWORK!r} is missing and no "
+                f"intelligence repo was found at {PLATFORM_REPO}.\n"
+                "Set EXPENSE_PLATFORM_REPO to its path, or start it manually: "
+                "python3 scripts/dev.py local-up (run from that repo)."
+            )
+        print(f"Platform network {PLATFORM_NETWORK!r} not found - starting the local platform stack...")
+        result = run(["python3", str(dev_script), "local-up"], cwd=PLATFORM_REPO)
+        if result.returncode != 0:
+            sys.exit("Failed to start the platform stack - see output above.")
+    else:
+        print("Platform stack already up.")
+
+    if not _container_running(PG_BRIDGE_NAME):
+        print("pg-bridge not running - recreating the loopback bridge to local Postgres...")
+        subprocess.run(["docker", "rm", "-f", PG_BRIDGE_NAME], capture_output=True, check=False)
+        result = run(
+            [
+                "docker",
+                "run",
+                "-d",
+                "--name",
+                PG_BRIDGE_NAME,
+                "--network",
+                PLATFORM_EDGE_NETWORK,
+                "-p",
+                "127.0.0.1:15432:5432",
+                "alpine/socat",
+                "tcp-listen:5432,fork,reuseaddr",
+                "tcp:postgres:5432",
+            ]
+        )
+        if result.returncode != 0:
+            sys.exit("Failed to create pg-bridge - see output above.")
+        result = run(["docker", "network", "connect", PLATFORM_NETWORK, PG_BRIDGE_NAME])
+        if result.returncode != 0:
+            sys.exit("Failed to join pg-bridge to the expenses network - see output above.")
+    else:
+        print("pg-bridge already running.")
+
+
 def sync_dependencies() -> None:
     """Reinstall backend Python dependencies if requirements.txt changed."""
     current = _hash_paths([REQUIREMENTS])
@@ -75,9 +149,32 @@ def sync_dependencies() -> None:
     _cache_set("requirements.hash", current)
 
 
+def _db_connected() -> bool:
+    """Reuse the app's own connectivity check (infrastructure/database/health.py) rather than
+    duplicating asyncpg connection logic here."""
+    code = (
+        "import asyncio, sys; sys.path.insert(0, 'src')\n"
+        "from expense_manager_backend.config.settings import get_settings\n"
+        "from expense_manager_backend.infrastructure.database.health import check_database\n"
+        "async def main():\n"
+        "    config = get_settings().database\n"
+        "    if not config.password:\n"
+        "        print('no'); return\n"
+        "    result = await check_database(config)\n"
+        "    print('yes' if result.connected else 'no')\n"
+        "asyncio.run(main())\n"
+    )
+    result = subprocess.run(
+        [str(VENV_PYTHON), "-c", code], cwd=BACKEND, capture_output=True, text=True, check=False
+    )
+    return result.returncode == 0 and result.stdout.strip() == "yes"
+
+
 def migration_status() -> tuple:
     """Return (head_revision, needs_migration: bool | None). None means status is unknown
-    (DB unreachable) - callers should not treat that as "no migration needed"."""
+    (DB unreachable) - callers should not treat that as "no migration needed". A DB that's
+    reachable but has no alembic_version table yet (fresh volume, never migrated) correctly
+    reports needs_migration=True, not "unreachable"."""
     heads = run(
         [str(VENV_PYTHON), "-m", "alembic", "heads"],
         cwd=BACKEND,
@@ -85,6 +182,9 @@ def migration_status() -> tuple:
     )
     if heads.returncode != 0:
         sys.exit("Could not read Alembic heads - see output above.")
+
+    if not _db_connected():
+        return "", None
 
     current = subprocess.run(
         [str(VENV_PYTHON), "-m", "alembic", "current"],
@@ -95,8 +195,9 @@ def migration_status() -> tuple:
         check=False,
     )
     if current.returncode != 0:
-        # Unreachable DB, not-yet-created schema, etc. Report unknown rather than guessing.
-        return "", None
+        # Connected, but e.g. "relation alembic_version does not exist" - a fresh database that
+        # has never been migrated. That needs a migration, it isn't "unreachable".
+        return "", True
     is_head = "(head)" in current.stdout
     return current.stdout.strip(), not is_head
 
@@ -140,8 +241,20 @@ def apply_migration() -> None:
         sys.exit("Migration failed - see output above.")
 
 
+IMAGE_TAG = "expense_backend:local"
+COMPOSE_SERVICE = "expense_backend"
+
+
+def _image_id(tag: str) -> str:
+    result = subprocess.run(
+        ["docker", "images", "-q", tag], capture_output=True, text=True, check=False
+    )
+    return result.stdout.strip()
+
+
 def rebuild_image_if_needed() -> None:
-    """Rebuild the backend Docker image only if source, Dockerfile, or dependencies changed."""
+    """Rebuild the backend Docker image only if source, Dockerfile, or dependencies changed,
+    then remove the old image build it replaces so stale, untagged images don't pile up."""
     watched = [REQUIREMENTS, BACKEND / "Dockerfile", BACKEND / "alembic.ini"]
     watched += list((BACKEND / "src").rglob("*.py"))
     watched += list((BACKEND / "alembic").rglob("*.py"))
@@ -149,27 +262,52 @@ def rebuild_image_if_needed() -> None:
     if current == _cache_get("image.hash"):
         print("Backend image inputs unchanged, skipping docker build.")
         return
-    result = run(["docker", "compose", "-f", str(COMPOSE_FILE), "build", "backend"])
+
+    old_image_id = _image_id(IMAGE_TAG)
+    result = run(["docker", "compose", "-f", str(COMPOSE_FILE), "build", COMPOSE_SERVICE])
     if result.returncode != 0:
         sys.exit("docker compose build failed.")
     _cache_set("image.hash", current)
 
+    new_image_id = _image_id(IMAGE_TAG)
+    if old_image_id and old_image_id != new_image_id:
+        print(f"Removing superseded image {old_image_id} ({IMAGE_TAG}'s previous build)...")
+        # Best-effort: a container still holding this layer (about to be replaced in the next
+        # step) blocks removal - ignore that, restart_backend()'s --remove-orphans will free it,
+        # and a leftover dangling layer is cleaned up by the next `docker image prune`.
+        subprocess.run(["docker", "rmi", old_image_id], capture_output=True, check=False)
+
 
 def restart_backend() -> None:
-    """Recreate the backend container from the current image."""
-    result = run(["docker", "compose", "-f", str(COMPOSE_FILE), "up", "-d", "backend"])
+    """Recreate the backend container from the current image, removing any orphaned container
+    docker compose no longer recognizes (e.g. left over from a renamed/removed service)."""
+    result = run(
+        ["docker", "compose", "-f", str(COMPOSE_FILE), "up", "-d", "--remove-orphans", COMPOSE_SERVICE]
+    )
     if result.returncode != 0:
         sys.exit("docker compose up failed.")
 
 
+def clean() -> None:
+    """Remove this project's stopped containers and dangling (untagged) images left behind by
+    old builds. Never touches volumes (the shared Postgres data lives there) or any other
+    project's containers/images/networks - only what's scoped to this backend."""
+    run(["docker", "container", "prune", "-f", "--filter", "label=com.docker.compose.project=expense_manager"])
+    run(["docker", "image", "prune", "-f", "--filter", "label=com.docker.compose.project=expense_manager"])
+
+
 def rerun() -> None:
-    """Detect what changed since the last run and bring the stack back up: reinstall
+    """Detect what changed since the last run and bring the stack back up: start the shared
+    local platform (Postgres/nginx) and the pg-bridge if either got stopped, reinstall
     dependencies if requirements.txt changed, apply a pending Alembic migration if one exists,
     rebuild the Docker image if source/deps changed, then restart the backend container."""
-    print("== 1/4 dependencies ==")
+    print("== 1/5 platform ==")
+    ensure_platform_up()
+
+    print("\n== 2/5 dependencies ==")
     sync_dependencies()
 
-    print("\n== 2/4 migrations ==")
+    print("\n== 3/5 migrations ==")
     current, needs_migration = migration_status()
     if needs_migration is None:
         print("Database unreachable - skipping migration check. Run scripts/dev.py migrate manually once it's up.")
@@ -179,19 +317,21 @@ def rerun() -> None:
     else:
         print("Database is already at the latest migration.")
 
-    print("\n== 3/4 image ==")
+    print("\n== 4/5 image ==")
     rebuild_image_if_needed()
 
-    print("\n== 4/4 restart ==")
+    print("\n== 5/5 restart ==")
     restart_backend()
     print("\nDone. Backend: http://expense.api.localhost:8080/health")
 
 
 TASKS = {
+    "platform-up": ensure_platform_up,
     "sync-deps": sync_dependencies,
     "migrate": apply_migration,
     "build": rebuild_image_if_needed,
     "restart": restart_backend,
+    "clean": clean,
     "rerun": rerun,
 }
 

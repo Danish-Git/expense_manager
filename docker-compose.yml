@@ -1,9 +1,10 @@
 services:
-  backend:
+  expense_backend:
+    container_name: expense_backend
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: expense_manager_backend:local
+    image: expense_backend:local
     env_file:
       - ./backend/.env
     environment:

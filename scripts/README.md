@@ -18,20 +18,29 @@ python3 scripts/dev.py rerun
 |---|---|---|
 | 1. Dependencies | `backend/requirements.txt` content changed since last run | `pip install -r` into the repo's `venv/` |
 | 2. Migrations | DB's current Alembic version != the latest revision in `backend/alembic/versions/` | Applies `alembic upgrade head` |
-| 3. Docker image | `Dockerfile`, `requirements.txt`, or any file under `backend/src`/`backend/alembic` changed | `docker compose build backend` |
-| 4. Restart | always | `docker compose up -d backend` |
+| 3. Docker image | `Dockerfile`, `requirements.txt`, or any file under `backend/src`/`backend/alembic` changed | `docker compose build backend`, then removes the image it replaced |
+| 4. Restart | always | `docker compose up -d --remove-orphans backend` |
 
 Steps 1 and 3 use a content hash cached in `scripts/.cache/` (gitignored) so unrelated runs are
 skipped and fast - not "usually you don't need to rebuild," but "hash unchanged, guaranteed
 skip."
+
+**Cleanup on rebuild:** whenever step 3 actually builds a new image, it records the previous
+image's ID first and removes it (`docker rmi`) right after the new one replaces it - so rebuilding
+never leaves the old, now-untagged image sitting around. Step 4 also passes `--remove-orphans`,
+which drops any container Compose no longer recognizes (e.g. left over from a renamed service).
+This never touches volumes (the shared Postgres data lives in one, owned by the `intelligence`
+stack, not this repo) and never touches any other project's containers/images/networks.
 
 Other tasks (see `python3 scripts/dev.py --list`):
 
 ```sh
 python3 scripts/dev.py sync-deps   # just step 1
 python3 scripts/dev.py migrate     # just step 2
-python3 scripts/dev.py build       # just step 3
+python3 scripts/dev.py build       # just step 3 (with its own cleanup)
 python3 scripts/dev.py restart     # just step 4
+python3 scripts/dev.py clean       # extra, opt-in: prune this project's stopped containers
+                                    # and dangling images (not run automatically by rerun)
 ```
 
 ### Applying a migration
@@ -148,9 +157,9 @@ docker exec intelligence-local-nginx-1 nginx -s reload
 
 ### `502 Bad Gateway` from `expense.api.localhost:8080`
 
-Either the backend container isn't running (`docker ps | grep expense_manager-backend-1`, then
+Either the backend container isn't running (`docker ps | grep expense_backend`, then
 `python3 scripts/dev.py restart`), or nginx can't resolve the `expense-backend-1` upstream - check
-that `docker-compose.yml`'s `backend` service has the network alias:
+that `docker-compose.yml`'s `expense_backend` service has the network alias:
 
 ```yaml
 networks:
@@ -166,8 +175,8 @@ container exists yet.
 
 ```sh
 # Is the backend container up, and what does it log?
-docker ps --filter name=expense_manager-backend-1
-docker logs expense_manager-backend-1 --tail 50
+docker ps --filter name=expense_backend
+docker logs expense_backend --tail 50
 
 # Is the app healthy end-to-end (API + DB)?
 curl -sS http://expense.api.localhost:8080/health
@@ -185,4 +194,22 @@ docker exec intelligence-local-nginx-1 ls /etc/nginx/conf.d
 # What Alembic revision is the code at vs. the database?
 cd backend && PYTHONPATH=src ../venv/bin/python -m alembic heads
 cd backend && PYTHONPATH=src ../venv/bin/python -m alembic current
+```
+
+
+1) password for postgres in intelligence: set any password (example 'postgres')
+2) password for expenses owner in intelligence: set any password (example 'postgres')
+3) password for expenses app in intelligence: set any password (example 'postgres')
+4) copy password from intelligence expenses owner in to backend .env.migrate
+5) copy password from intelligence expenses app in to backend .env
+6) run python3 scripts/dev.py rerun
+
+for copy password from intelligence expenses owner in to backend .env.migrate
+
+```sh
+grep '^EXPENSES_OWNER_PASSWORD=' /Users/apptunix/Documents/Projects/intelligence/.env.local \
+  | sed 's/^EXPENSES_OWNER_PASSWORD=/EXPENSE_DB_LOCAL_OWNER_PASSWORD=/' \
+  > /Users/apptunix/Documents/Projects/expense_manager/backend/.env.migrate
+chmod 600 /Users/apptunix/Documents/Projects/expense_manager/backend/.env.migrate
+python3 scripts/dev.py rerun
 ```

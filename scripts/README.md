@@ -213,3 +213,14 @@ grep '^EXPENSES_OWNER_PASSWORD=' /Users/apptunix/Documents/Projects/intelligence
 chmod 600 /Users/apptunix/Documents/Projects/expense_manager/backend/.env.migrate
 python3 scripts/dev.py rerun
 ```
+
+for copy password from intelligence expenses app in to backend .env
+
+```sh
+grep '^EXPENSES_APP_PASSWORD=' /Users/apptunix/Documents/Projects/intelligence/.env.local \
+  | sed 's/^EXPENSES_APP_PASSWORD=/EXPENSE_DB_LOCAL_PASSWORD=/' \
+  > /Users/apptunix/Documents/Projects/expense_manager/backend/.env
+chmod 600 /Users/apptunix/Documents/Projects/expense_manager/backend/.env
+python3 scripts/dev.py rerun
+```
+

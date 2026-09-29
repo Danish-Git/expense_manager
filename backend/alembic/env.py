@@ -26,9 +26,10 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../s
 
 from expense_manager_backend.config.settings import get_settings
 from expense_manager_backend.infrastructure.database.base import Base
+from expense_manager_backend.infrastructure.database.models import *
 
 settings = get_settings()
-config.set_main_option("sqlalchemy.url", settings.database_url)
+config.set_main_option("sqlalchemy.url", settings.database.url)
 
 target_metadata = Base.metadata
 

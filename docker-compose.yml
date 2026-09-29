@@ -1,0 +1,23 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: expense_manager_backend:local
+    env_file:
+      - ./backend/.env
+    environment:
+      # Inside the container the app reaches Postgres directly on its internal network, not
+      # through the laptop-only loopback bridge (127.0.0.1:15432) that backend/.env defaults to.
+      EXPENSE_DB_LOCAL_HOST: postgres
+      EXPENSE_DB_LOCAL_PORT: "5432"
+    networks:
+      expenses_internal:
+        # nginx's expenses.conf upstream name (<project>-<service>-1), matching intelligence's convention.
+        aliases:
+          - expense-backend-1
+
+networks:
+  expenses_internal:
+    external: true
+    name: ${EXPENSES_NETWORK:-intelligence-local_expenses_internal}

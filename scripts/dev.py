@@ -15,6 +15,7 @@ whether the Docker image needs rebuilding - then restarts the backend container.
 from __future__ import annotations
 
 import argparse
+import getpass
 import hashlib
 import os
 import subprocess
@@ -170,6 +171,73 @@ def _db_connected() -> bool:
     return result.returncode == 0 and result.stdout.strip() == "yes"
 
 
+PG_CONTAINER = "intelligence-local-postgres-1"
+ENV_APP = BACKEND / ".env"
+# role -> (file, key) holding that role's password for the local database.
+ROLE_ENV = {
+    "expenses_app": (ENV_APP, "EXPENSE_DB_LOCAL_PASSWORD"),
+    "expenses_owner": (ENV_MIGRATE, "EXPENSE_DB_LOCAL_OWNER_PASSWORD"),
+}
+
+
+def _set_env_value(path: Path, key: str, value: str) -> None:
+    """Set KEY=value in an env file (creating it, mode 0600), leaving every other line alone."""
+    lines = path.read_text().splitlines() if path.exists() else []
+    entry = f"{key}={value}"
+    if any(line.startswith(f"{key}=") for line in lines):
+        lines = [entry if line.startswith(f"{key}=") else line for line in lines]
+    else:
+        lines.append(entry)
+    path.write_text("\n".join(lines) + "\n")
+    path.chmod(0o600)
+
+
+def _set_role_password(role: str, password: str) -> bool:
+    """ALTER ROLE through psql's stdin so the password never appears in argv or output."""
+    literal = password.replace("'", "''")
+    result = subprocess.run(
+        ["docker", "exec", "-i", "-u", "postgres", PG_CONTAINER, "psql", "-v", "ON_ERROR_STOP=1", "-q"],
+        input=f"ALTER ROLE {role} PASSWORD '{literal}';\n",
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    return result.returncode == 0
+
+
+def ensure_db_connected() -> bool:
+    """Check the app's database connection; if it fails, prompt (hidden input) for the
+    expenses_app / expenses_owner passwords, set them on the Postgres roles and save the same
+    values to backend/.env and backend/.env.migrate. Passwords are never printed or logged."""
+    if _db_connected():
+        print("Local DB: OK")
+        return True
+
+    print("Local DB: FAIL - the app could not connect (usually backend/.env and the Postgres role disagree on the password).")
+    if not sys.stdin.isatty():
+        print("Run `python3 scripts/dev.py db-check` in a terminal to set the passwords.")
+        return False
+    if input("Set the role passwords and update the env files now? [y/N] ").strip().lower() != "y":
+        return False
+
+    for role, (path, key) in ROLE_ENV.items():
+        password = getpass.getpass(f"New password for {role}: ")
+        if not password or password != getpass.getpass("Enter it again: "):
+            print(f"Empty or mismatched password for {role} - nothing changed for it.")
+            continue
+        if not _set_role_password(role, password):
+            print(f"Could not set the password for {role} in {PG_CONTAINER} - is the platform up?")
+            continue
+        _set_env_value(path, key, password)
+        print(f"{role}: role password set, {path.relative_to(ROOT)} updated.")
+
+    ok = _db_connected()
+    print("Local DB: OK" if ok else "Local DB: still FAIL")
+    if ok:
+        print("Re-run `python3 scripts/dev.py rerun` so the backend container picks up the new backend/.env.")
+    return ok
+
+
 def migration_status() -> tuple:
     """Return (head_revision, needs_migration: bool | None). None means status is unknown
     (DB unreachable) - callers should not treat that as "no migration needed". A DB that's
@@ -310,7 +378,9 @@ def rerun() -> None:
     print("\n== 3/5 migrations ==")
     current, needs_migration = migration_status()
     if needs_migration is None:
-        print("Database unreachable - skipping migration check. Run scripts/dev.py migrate manually once it's up.")
+        print("Database unreachable - skipping migration check.")
+        ensure_db_connected()
+        print("Run scripts/dev.py migrate manually once it's up.")
     elif needs_migration:
         print(f"Pending migration detected ({current or 'no version stamped yet'}). Applying...")
         apply_migration()
@@ -328,6 +398,7 @@ def rerun() -> None:
 TASKS = {
     "platform-up": ensure_platform_up,
     "sync-deps": sync_dependencies,
+    "db-check": ensure_db_connected,
     "migrate": apply_migration,
     "build": rebuild_image_if_needed,
     "restart": restart_backend,

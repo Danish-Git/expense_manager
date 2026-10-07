@@ -36,6 +36,9 @@ Other tasks (see `python3 scripts/dev.py --list`):
 
 ```sh
 python3 scripts/dev.py sync-deps   # just step 1
+python3 scripts/dev.py db-check    # test the app's DB connection; if it fails, prompts (hidden input)
+                                    # for the expenses_app/expenses_owner passwords, sets them on the
+                                    # Postgres roles and writes backend/.env and backend/.env.migrate
 python3 scripts/dev.py migrate     # just step 2
 python3 scripts/dev.py build       # just step 3 (with its own cleanup)
 python3 scripts/dev.py restart     # just step 4
